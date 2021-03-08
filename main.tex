@@ -1,0 +1,89 @@
+\documentclass[11pt]{article}
+
+\usepackage[czech]{babel}
+\usepackage{a4wide}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{mleftright}
+\usepackage{subcaption}
+\usepackage{parskip}
+
+% forcing footnotes to be at the very bottom
+\usepackage[bottom]{footmisc}
+
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{subfiles}
+
+\usepackage{geometry}
+\geometry{
+    a4paper,
+    total={170mm,257mm},
+    right=20mm,
+    left=20mm,
+    top=30mm,
+    bottom=20mm,
+}
+
+\titleformat{\section} {\normalfont\fontsize{16}{15}\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection} {\normalfont\fontsize{14}{15}\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection} {\normalfont\fontsize{12}{15}\bfseries}{\thesubsubsection}{1em}{}
+
+\usepackage{tcolorbox}
+\tcbset{on line,
+        boxsep=4pt, left=0pt,right=0pt,top=0pt,bottom=0pt,
+        colframe=white
+        }
+
+\pagestyle{fancy}
+\fancyhf{}
+% Now set the headers
+\fancyhead[LE,RO]{\footnotesize\thepage}
+\fancyhead[LO,RE]{\footnotesize\leftmark}
+\fancyfoot{}
+\fancyfoot[R]{\thepage}
+
+\definecolor{ceruleanblue}{rgb}{0.16, 0.32, 0.75}
+
+\begin{document}
+
+\begin{titlepage}
+    \begin{center}
+        \vspace*{1cm}
+            
+        \Huge
+        \textbf{Robotika 3}
+            
+        \vspace{0.5cm}
+        \LARGE
+				Programování Robota
+        
+        \vspace{1.5cm}
+        
+        \vfill
+        \flushright
+        \normalsize
+				Tomáš Sláma\\
+				\today
+        
+    \end{center}
+\end{titlepage}
+
+\tableofcontents
+\clearpage
+
+
+\subfile{Chapters/01.tex}
+\subfile{Chapters/02.tex}
+\subfile{Chapters/03.tex}
+\subfile{Chapters/04.tex}
+\subfile{Chapters/05.tex}
+\subfile{Chapters/06.tex}
+\subfile{Chapters/07.tex}
+
+\end{document}
