@@ -1,4 +1,6 @@
-# ignore generated output files
+Ignored/
+
+# TeX-related generated output files
 *.aux
 *.fdb_latexmk
 *.fls

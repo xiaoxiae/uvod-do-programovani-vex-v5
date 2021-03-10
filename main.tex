@@ -13,6 +13,36 @@
 \usepackage{subcaption}
 \usepackage{parskip}
 
+\usepackage{siunitx}
+\sisetup{per-mode = symbol}
+
+% https://tex.stackexchange.com/questions/164113/the-exercise-package-in-list-form
+% ---
+\usepackage{scrextend}
+
+\usepackage[load-headings]{exsheets}
+\DeclareInstance{exsheets-heading}{mylist}{default}{
+  runin = true ,
+  attach = {
+    main[l,vc]number[l,vc](-2em,0pt) ;
+    main[l,vc]title[l,vc](-5.5em,0pt)
+  }
+}
+
+\DeclareTranslation{Czech}{exsheets-exercise-name}{Příklad}
+\DeclareTranslation{Czech}{exsheets-solution-name}{Řešení}
+
+\SetupExSheets{
+  headings = mylist , % use the new headings instance
+  headings-format = \it ,
+  counter-format = se.qu ,
+  counter-within = section ,
+	question/pre-hook = \addmargin[5.5em]{0em} ,
+	solution/pre-hook = \addmargin[5.5em]{0em}
+}
+% ---
+
+
 % forcing footnotes to be at the very bottom
 \usepackage[bottom]{footmisc}
 
@@ -77,7 +107,7 @@
 \tableofcontents
 \clearpage
 
-
+\subfile{Chapters/00.tex}
 \subfile{Chapters/01.tex}
 \subfile{Chapters/02.tex}
 \subfile{Chapters/03.tex}
@@ -85,5 +115,12 @@
 \subfile{Chapters/05.tex}
 \subfile{Chapters/06.tex}
 \subfile{Chapters/07.tex}
+
+\newpage
+\setcounter{secnumdepth}{0}
+\section{Řešení příkladů}
+\setcounter{secnumdepth}{3}
+
+\printsolutions
 
 \end{document}

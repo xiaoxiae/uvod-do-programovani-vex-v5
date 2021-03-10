@@ -2,12 +2,50 @@
 
 
 \begin{document}
-	\section{Základy programování v jazyce Python}
+	\section{Teorie autonomního ovládání}
 
-	\subsection{Proměnné}
+	Tato část je (oproti ostatním) více teoretická, nicméně obsahuje informace důležité k programování autonomního robota. Autonomním robotem tu rozumíme robota, který se pohybuje zcela sám (na základě programu, který vykonává), a ne např. člověkem s ovladačem.
 
-	\subsection{Smyčky}
+	\subsection{Mrtvé počítání}
+	Mrtvé počítání je nejzákladnější typ autonomního ovládání robota a funguje na velice jednoduchém principu: pokud chceme aby robot jel \si{20m} a víme, že se pohybuje průměrnou rychlostí \si{5m/s}, tak musí jet $20 / 5 = \si{4s}$.
 
-	\subsection{Podmínky}
+	Princip je to velice jednoduchý, ale poněkud nepřesný -- co se stane, když:
+	\begin{itemize}
+		\item začne docházet baterie a robot pojede pomaleji?
+		\item robotu proklouzne kolečko a na chvilku se zastaví?
+	\end{itemize}
+
+	Tyto problémy nejdou metodou mrtvého počítání řešit, protože robot neví, co se okolo něho děje. Nevyužívá totiž žádné senzory, které by ho informovali o tom, že se něco změnilo/pokazilo.
+
+	\begin{question}
+		Několikrát změřte průměrnou rychlost našeho robota, když motory pustíte na maximální výkon po dobu \si{5s}. Jak moc jsou výsledky přesné (liší se od sebe o milimetry/centimetry)?
+	\end{question}
+
+	\begin{question}
+		Napište program v jazyce Blocky, po jehož spuštění robot ujede \si{3m}. Použijte jeho průměrnou rychlost vypočítanou v minulém příkladu.
+	\end{question}
+
+	\subsection{Bang-bang}
+	Bang-bang se snaží do jisté míry napravit nedostatky minulé metody tím, že do ovládání zakomponuje data o tom, co se děje. Jeden přímočarý způsob je přidání enkóderů (TODO: brali tohle) na kolečka robota, díky čemuž můžeme počítat otáčky, které kolečka provedou a zjistit tedy, kolik robot urazil. Ke spočítání ujeté vzdálenosti $d$ z otáček použijeme vzoreček $d = 2 \pi p/2 = \pi p$, kde $p$ je průměr kolečka, které enkóder měří.
+
+	K tomu, robot ujel \si{20m} stačí s pomocí vzorečku výše (průměr kolečka musí být zadán v metrech!) kontrolovat, kolik už robot ujel -- pokud už jsme přesáhli cíl, tak zastavíme.
+
+	Díky zakomponování dat z reálného světa jsme sice vyřešili problémy výše, ale stále máme problém s přesností -- i pokud zastavíme hned po přesažení cíle, tak robot díky setrvačnosti tento cíl o nějakou (často i nemalou) vzdálenost přesáhne.
+
+	Tento problém dobře řeší pokročilejší metody jako PID, které do výpočtů přidávají data o tom, jak se robot pohyboval v minulosti, jak se pohybuje aktuálně a jak se pravděpodobně bude pohybovat v budoucnosti a dosahují skvělých výsledků \footnote{Dobrá ukázka PIDu je např. toto video: \href{https://www.youtube.com/watch?v=4Y7zG48uHRo}{https://www.youtube.com/watch?v=4Y7zG48uHRo}.}. 
+
+	\begin{question}
+		Spočítejte průměr koleček na našem robotovi. Kolik metrů ujede za jednu otáčku?
+	\end{question}
+
+	\begin{question}
+		Napište program v jazyce Blocky, po jehož spuštění robot ujede \si{3m}. Použijte vzoreček výše a průměr spočítaný v minulém příkladu.
+	\end{question}
+
+	\subsection{Výpočet pozice robota}
+	K tomu, abychom mohli robotu říct \textit{dojeď na tyto souřadnice} potřebuje robot vědět, kde se aktuálně nachází. To si může počítat z informací o tom, kolik otáček udělaly jeho kolečka (enkódery), a jakým směrem se aktuálně dívá (gyroskop).
+
+	Tímto problémem se zabývá \textbf{odometrie}. TODO
+
 
 \end{document}
