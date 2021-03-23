@@ -38,10 +38,11 @@
   counter-format = se.qu ,
   counter-within = section ,
 	question/pre-hook = \addmargin[5.5em]{0em} ,
-	solution/pre-hook = \addmargin[5.5em]{0em}
+	solution/pre-hook = \addmargin[5.5em]{0em} ,
+	question/post-hook = \endaddmargin ,
+	solution/post-hook = \endaddmargin
 }
 % ---
-
 
 % forcing footnotes to be at the very bottom
 \usepackage[bottom]{footmisc}
@@ -79,6 +80,9 @@
 \fancyfoot[R]{\thepage}
 
 \definecolor{ceruleanblue}{rgb}{0.16, 0.32, 0.75}
+\definecolor{motorlight}{rgb}{0.85, 0.80, 0.70}
+\definecolor{motordark}{rgb}{0.64, 0.51, 0.25}
+\definecolor{wait}{rgb}{0.64, 0.25, 0.25}
 
 \begin{document}
 
@@ -107,16 +111,37 @@
 \tableofcontents
 \clearpage
 
-\subfile{Chapters/00.tex}
-\subfile{Chapters/01.tex}
-\subfile{Chapters/02.tex}
-\subfile{Chapters/03.tex}
-\subfile{Chapters/04.tex}
-\subfile{Chapters/05.tex}
-\subfile{Chapters/06.tex}
-\subfile{Chapters/07.tex}
+% https://tex.stackexchange.com/questions/263467/exsheets-how-to-get-a-counter-reference-combining-section-and-question-numbers
+\renewcommand\thequestion{\thesection.\arabic{question}}
+
+\newcommand{\block}{$\vcenter{\hbox{\includegraphics[height=1em]{../Images/blocky-logo.png}}}$}
+\newcommand{\blockimage}[2]{$\vcenter{\hbox{\includegraphics[height=#1]{#2}}}$}
+
+\setcounter{secnumdepth}{0}
+\section{Předmluva}
+\setcounter{secnumdepth}{3}
+
+Tato příručka byla sepsána Tomášem Slámou ke vzdělávacímu programu Robotika 3 a slouží jako učebnice k programování robota Vex V5.
+
+\subsection{Postavený robot}
 
 \newpage
+
+\subfile{Chapters/01.tex}
+\newpage
+\subfile{Chapters/02.tex}
+\newpage
+\subfile{Chapters/03.tex}
+\newpage
+\subfile{Chapters/04.tex}
+\newpage
+\subfile{Chapters/05.tex}
+\newpage
+\subfile{Chapters/06.tex}
+\newpage
+\subfile{Chapters/07.tex}
+\newpage
+
 \setcounter{secnumdepth}{0}
 \section{Řešení příkladů}
 \setcounter{secnumdepth}{3}
