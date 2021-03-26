@@ -4,7 +4,7 @@
 \begin{document}
 	\section{Práce se senzory}
 
-	\subsection{Enkóder}
+	\subsection{Enkóder}\label{cha:encoder}
 	Enkóder je senzor nezbytný k přesnému pohybu robota, jelikož měří otáčky jeho kol. Díky tomu jde (s dobrou přesností) určit, kde se robot nachází, a přizpůsobit tomu i naše programy.
 
 	Jeden z nejčastějších typů enkóderů je optický enkóder. Funguje na principu světelného senzoru, na který svítí světlo (většinou lazer). Otáčením kolečka se senzor postupně zakrývá/odkrývá a touto změnou je tedy možné určit, že se kolečko otočilo.
@@ -17,8 +17,40 @@
 		\caption{Polohy optického enkóderu; nalevo světlo propouští, napravo blokuje.}
 	\end{figure}
 
-	\subsection{Světelný senzor}
+	Všechny motory, se kterými náš robot pracují, v sobě už enkóder zabudovaný mají. Využívá ho např. blok \blockimage{1.8em}{../Images/02/motor-distance-start.png}, který na jeho základě měří otáčky kola.
 
 	\subsection{Senzor nárazu}
+	Senzor nárazu (anglicky \textit{Bumper Switch}) je další ze senzorů, které budeme k pohybu robota využívat. Hodí se, když budeme chtít rozpoznávat, zda robot náhodou do něčeho nenarazil a např. by se tedy měl otočit a jet jinam. Funguje na velice přímočarém principu -- pokud není stlačen, tak obvod uvnitř není propojený; jakmile stlačen je, tak se obvod propojí.
 
+	\subsubsection{Nastavení senzoru}
+	TODO: že je to dole v A
+
+	\begin{question}
+		Přidělejte na zadní část našeho robota dva senzory nárazu.
+	\end{question}
+
+	\subsubsection{Programování se senzorem}
+	TriPort Inputs
+
+	\begin{question}
+		Naprogramujte robota, aby opakovaně prováděl následující:
+		\begin{enumerate}
+			\item jel dozadu, dokud do něčeho nenarazí (detekujte přes blok ukázaný výše)
+			\item po nárazu jel kousek dopředu
+			\item otočil se o 90\degree
+		\end{enumerate}
+	\end{question}
+
+	\subsection{Kamerový senzor}
+	Jako poslední ze senzorů, které tato kapitola rozebírá, se budeme bavit o kamerovém senzoru (anglicky \textit{Vision Sensor}). Jedná se vlastně o malý počítač, který ovládá kameru a dokáže obraz kamery 
+
+	TODO: tohle je možná až moc advanced?
+
+	\subsubsection{Nastavení senzoru}
+
+	\begin{question}
+		Přidělejte do přední části našeho robota kamerový senzor.
+	\end{question}
+
+	\subsubsection{Programování se senzorem}
 \end{document}

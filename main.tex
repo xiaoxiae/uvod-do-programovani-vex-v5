@@ -11,6 +11,7 @@
 \usepackage{mathtools}
 \usepackage{mleftright}
 \usepackage{subcaption}
+\usepackage{gensymb}
 \usepackage{parskip}
 
 \usepackage{siunitx}
@@ -28,6 +29,13 @@
     main[l,vc]title[l,vc](-5.5em,0pt)
   }
 }
+
+\DeclareRobustCommand*\questionstar{\texorpdfstring{\bonusquestionsign}{* }}
+\DeclareRobustCommand*\bonusquestionsign{\llap{$\bigstar$\space}}
+
+\NewQuSolPair
+	{question*}[name=\questionstar Příklad]
+	{solution*}[name=\questionstar Řešení]
 
 \DeclareTranslation{Czech}{exsheets-exercise-name}{Příklad}
 \DeclareTranslation{Czech}{exsheets-solution-name}{Řešení}
@@ -114,7 +122,7 @@
 % https://tex.stackexchange.com/questions/263467/exsheets-how-to-get-a-counter-reference-combining-section-and-question-numbers
 \renewcommand\thequestion{\thesection.\arabic{question}}
 
-\newcommand{\block}{$\vcenter{\hbox{\includegraphics[height=1em]{../Images/blocky-logo.png}}}$}
+\newcommand{\block}{$\vcenter{\hbox{\includegraphics[height=0.8em]{../Images/blocky-logo.png}}}$}
 \newcommand{\blockimage}[2]{$\vcenter{\hbox{\includegraphics[height=#1]{#2}}}$}
 
 \setcounter{secnumdepth}{0}

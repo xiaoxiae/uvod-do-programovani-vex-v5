@@ -4,6 +4,7 @@
 \begin{document}
 	\section{Základy programování v jazyce Blocky}
 
+
 	\subsection{Základní ovládání motorů}
 	K ovládání motorů robota budeme pro začátek používat dva základní příkazy (k nalezení v příkazové části, v sekci \textbf{VEX V5 Motors}):
 	\begin{itemize}
@@ -29,7 +30,9 @@
 	\end{question}
 
 	\subsection{Smyčky}
-	V příkladu \ref{que:loop-example} jsme několikrát opakovali stejný kód, což může být otravné. Výrazně jednodušší by bylo, kdybychom mohli prohlásit „opakuj tento kód.“ To je naštěstí přesně to, co dělají smyčky. Dvě nejzákladnější (k nalezení v příkazové části, v sekci \textbf{Loops}) vypadají takto:
+	V příkladu \ref{que:loop-example} jsme několikrát opakovali stejné bloky, což může být pro prográmatora dost nepříjemné. Výrazně jednodušší by bylo, kdybychom mohli prohlásit „opakuj tyto bloky“ -- to je naštěstí přesně, co dělají smyčky.
+
+	Dvě nejzákladnější (k nalezení v příkazové části, v sekci \textbf{Loops}) vypadají takto:
 	\begin{itemize}
 		\item[\block] \blockimage{4em}{../Images/02/loop.png} -- opakuje bloky uvnitř několikrát.
 		\item[\block] \blockimage{4em}{../Images/02/loop-forever.png} -- opakuje bloky uvnitř donekonečna.
@@ -43,18 +46,26 @@
 		Naprogramujte robota, aby donekonečna jezdil do čtverce (1 vteřinu rovně, poté otočení doprava/doleva a opakovat...).
 	\end{question}
 
-	\subsection{Jízda na vzdálenost}
-	Zatím umíme pouze zapnout daný motor a čekat nějakou dobu, ale občas by se nám hodilo říct motoru „otoč se o tolik stupňů/otáček.“ Kombinací příkazů motoru a smyček toho můžeme docílit. Budeme potřebovat následující nové bloky:
+	\subsection{Jízda na vzdálenost}\label{cha:distanceride}
+	Zatím umíme zapnout daný motor a na nějakou dobu, ale občas by se nám hodilo říct motoru „otoč se o tolik stupňů/otáček.“ Kombinací příkazů motoru a smyček toho můžeme docílit. Budeme k tomu potřebovat následující nové bloky:
 	\begin{itemize}
-		\item[\block] \blockimage{2em}{../Images/02/motor-distance-start.png} -- zapne motor, dokud se neotočí o daný počet stupňů (\textit{degrees}) nebo otáček (\textit{revolutions}). Je opět neblokující -- zapne motor a jde na další block.
+		\item[\block] \blockimage{2em}{../Images/02/motor-distance-start.png} -- zapne motor, dokud se neotočí o daný počet stupňů (\textit{degrees}) nebo otáček (\textit{revolutions}). Je neblokující -- zapne motor a jde na další block.
 		\item[\block] \blockimage{4em}{../Images/02/loop-while.png} -- \parbox{0.725\textwidth}{opakuje bloky uvnitř, dokud (\textit{while}) nebo než (\textit{until}) platí podmínka. Pokud uvnitř nejsou žádné bloky, tak pouze blokuje, dokud/než podmínka platí}.
 		\item[\block] \blockimage{1.5em}{../Images/02/motor-done.png} -- podmínka, zda daný motor skončil; k nalezení v sekci \textbf{VEX V5 Motors}.
 	\end{itemize}
 
-	Možná se zdá, ze by stačilo za \tcbox[colback=ceruleanblue,coltext=white]{start} blok dát první blok v seznamu výše -- to ale nebude stačit, protože jakmile program dojde za poslední blok, tak vše skončí a robot se zastaví. Až teprve smyčkou mu řekneme, že má počkat.
+	Možná se zdá, ze by stačilo za \tcbox[colback=ceruleanblue,coltext=white]{start} blok dát první blok v seznamu výše -- to ale stačit nebude, protože jakmile program dojde za poslední blok, tak vše skončí a robot se zastaví. Až teprve smyčkou mu řekneme, že má počkat.
+
+	K tomu, aby robot jel rovně 3 otáčky, můžeme udělat např. toto:
+
+	TODO: obrázek
 
 	\begin{question}
 		Naprogramujte robota, aby jel rovně pět otáček, obrátil se (otáčením doleva/doprava, opět pomocí otáček) a poté jel dvanáct otáček dozadu.
 	\end{question}
+
+	\begin{question*}
+		Vytvořte pro robota slalomovou dráhu (např. z ruliček/slepených papírů) a naprogramujte robota, aby jí co nejrychlejí projel a vrátil se zpět do cíle. Bonusové body za to, pokud cestou nepřevrhne ani jednu tyčku.
+	\end{question*}
 
 \end{document}
