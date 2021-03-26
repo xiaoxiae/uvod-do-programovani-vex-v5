@@ -10,8 +10,9 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: main.tex
+          args: "-pdf -file-line-error -halt-on-error -interaction=nonstopmode -outdir=Build/"
       - name: Place the PDF to the workflow tab
         uses: actions/upload-artifact@v2
         with:
           name: PDF
-          path: main.pdf
+          path: Build/main.pdf
