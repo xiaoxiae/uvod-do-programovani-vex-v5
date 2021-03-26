@@ -10,9 +10,10 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: main.tex
-          args: "-pdf -file-line-error -halt-on-error -interaction=nonstopmode -outdir=Build/"
+          args: "-pdf"
+          latexmk_use_lualatex: true
       - name: Place the PDF to the workflow tab
         uses: actions/upload-artifact@v2
         with:
           name: PDF
-          path: Build/main.pdf
+          path: main.pdf
