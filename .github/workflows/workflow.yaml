@@ -11,7 +11,6 @@ jobs:
         with:
           root_file: main.tex
           args: "-pdf"
-          latexmk_use_lualatex: true
       - name: Place the PDF to the workflow tab
         uses: actions/upload-artifact@v2
         with:
