@@ -1,12 +1,6 @@
+# Private
 Ignored/
-Build/
 
-# TeX-related generated output files
-*.aux
-*.fdb_latexmk
-*.fls
-*.log
-*.out
-*.synctex.gz
-*.toc
-*.dvi
+# Build
+Build/
+_minted*

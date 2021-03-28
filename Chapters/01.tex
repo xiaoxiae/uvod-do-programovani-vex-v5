@@ -85,7 +85,7 @@
 
 	\subsection{Náš první Blocky program}
 
-	Programovací jazyk Blocky funguje na principu „bloků.“ Program vždy začíná v bloku \tcbox[colback=ceruleanblue,coltext=white]{start} a poté pokračuje do bloku, který je pod tím, který právě dokončil.
+	Programovací jazyk Blocky funguje na principu „bloků.“ Program vždy začíná v bloku \blockStartImage a poté pokračuje do bloku, který je pod tím, který právě dokončil.
 
 	Pojďme naprogramovat základní program, který řekne robotovi, aby jel $3$ vteřiny dopředu:
 
@@ -96,9 +96,9 @@
 		\end{minipage}
 	\end{figure}
 
-	Vytvoříme ho tak, že v příkazové části klikneme na \textbf{VEX V5 Motors}, najdeme příkaz po startu a myší ho přetáhneme přímo pod start. Pro druhý rovněž opakujeme, ale \texttt{motor\_1} změníme na \texttt{motor\_10}. Příkaz \tcbox[colback=wait,coltext=white]{wait} najdeme v sekci \textbf{Robot Mesh}. Pro spuštění programu stačí v ovládací části stisknout modré tlačítko \textbf{Run}.
+	Vytvoříme ho tak, že v příkazové části klikneme na \textbf{VEX V5 Motors}, najdeme příkaz po startu a myší ho přetáhneme přímo pod start. Pro druhý rovněž opakujeme, ale \texttt{motor\_1} změníme na \texttt{motor\_10}. Příkaz \blockWaitImage najdeme v sekci \textbf{Robot Mesh}. Pro spuštění programu stačí v ovládací části stisknout modré tlačítko \textbf{Run}.
 
-	Robot se však místo toho, aby jel rovně, začal točit! To je kvůli tomu, že jeden motor je nainstalovaný opačným směrem než ten druhý a „dopředu“ pro něj tedy znamená to, co pro druhý „dozadu.“ Tento problém vyřešíme tak, že pro obrácený motor klikneme v hardwarové části na kolečko a zaškrtneme \textbf{Reverse polarity}:
+	Robot se však místo toho, aby jel rovně, začal točit! To je kvůli tomu, že jeden motor je nainstalovaný opačným směrem než ten druhý a „dopředu“ pro něj tedy znamená to, co pro druhý „dozadu.“ Tento problém vyřešíme tak, že pro obrácený motor klikneme v hardwarové části na kolečko a zaškrtneme \textbf{Reverse polarity:}
 
 	\begin{figure}[h!]%
 		\begin{subfigure}{.49\textwidth}%
@@ -120,12 +120,12 @@
 		\begin{subfigure}{.49\textwidth}%
 			\centering%
 			\frame{\includegraphics[width=\linewidth]{../Images/01/hour-of-code.png}}%
-			\caption{Základní vzhled}%
+			\caption{základní vzhled}%
 		\end{subfigure} \hspace{.05\textwidth}%
 		\begin{subfigure}{.49\textwidth}%
 			\centering%
 			\frame{\includegraphics[width=\linewidth]{../Images/01/hour-of-code-uimproved.png}}%
-			\caption{Vzhled po posunutí modrých oddělovačů}%
+			\caption{vzhled po posunutí modrých oddělovačů}%
 		\end{subfigure}%
 		\caption{Stránka \href{http://www.robotmesh.com/create/176384}{Hour of Code}}
 	\end{figure}
@@ -137,6 +137,10 @@
 	\begin{question}
 		Spusťte přednastavený program. Co virtuální robot dělá?
 	\end{question}
+
+	\begin{solution}
+		Robot je naprogramovaný tak, aby jel rovně do té doby, než narazí do zdi.
+	\end{solution}
 
 	\begin{question}
 		Vytvořte a spusťte program z minulé části na virtuálním robotovi.
