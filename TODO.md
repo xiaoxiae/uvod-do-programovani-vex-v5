@@ -1,7 +1,6 @@
 # TODO
 ## Obecné
-[ ] README
-[ ] Počet Git commitů jako aktuální verze
+[x] README
 [ ] Link na nejnovější asset do dokumentu
 [ ] Zkonsistentnit tlustý a italics text
 
