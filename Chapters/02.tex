@@ -12,21 +12,21 @@
 		\blockMotorStop
 	\end{itemize}
 
-	Když robot vykonává náš program a potká tyto dva bloky, tak zapne/vypne daný motor a jde okamžitě na další příkaz. Takovým blokům říkáme \textbf{neblokující}, protože „neblokují“ běh programu.
+	Když robot vykonává náš program a potká tyto dva bloky, tak zapne/vypne daný motor a jde okamžitě na další příkaz. Takovým blokům říkáme neblokující, protože „neblokují“ běh programu.
 
 	K tomu, abychom mohli psát komplexnější programy, budeme potřebovat ještě jeden příkaz, se kterým jsme se setkali v minulé části:
 	\begin{itemize}
 		\blockWait
 	\end{itemize}
 
-	Tento příkaz je \textbf{blokující} -- jakmile na něho při běhu programu dojde, tak se musí počkat, než uplyne zadaný čas, než se začnou vykonávat bloky pod ním.
+	Tento příkaz je blokující -- jakmile na něho při běhu programu dojde, tak se musí počkat, než uplyne zadaný čas, než se začnou vykonávat bloky pod ním.
 
-	\begin{question}
-		Naprogramujte robota, aby jel dvě vteřiny rovně, obrátil se (otáčením doleva/doprava) a poté jel dvě vteřiny dozadu. Nastavte rychlost tak, aby robot jel rozumně rychle.
+	\begin{question}\label{que:basic}%
+		Naprogramujte robota, aby jel dvě vteřiny rovně, otočil se (otáčením doleva/doprava) a poté jel dvě vteřiny dozadu. Nastavte rychlost tak, aby robot jel rozumně rychle.
 	\end{question}
 
 	\begin{solution}
-		\begin{figure}[h!]
+		\begin{figure}
 			\centering
 			\begin{minipage}{0.5\textwidth}
 				\includegraphics[width=\linewidth]{../Images/02/sol2.png}
@@ -39,17 +39,13 @@
 	\end{question}
 
 	\begin{solution}
-		\begin{figure}[h!]
+		\begin{figure}
 			\centering
 			\begin{minipage}{0.5\textwidth}
 				\includegraphics[width=\linewidth]{../Images/02/sol3.png}
 			\end{minipage}
 		\end{figure}
 	\end{solution}
-
-	TODO: že jde program pouze nahrát
-
-	TODO úkoly: ať to zkusí s těma dvěma předešlejma
 
 	\subsection{Smyčky}
 	V příkladu \ref{que:loop-example} jsme několikrát opakovali stejné bloky, což může být pro prográmatora dost nepříjemné. Výrazně jednodušší by bylo, kdybychom mohli prohlásit „opakuj tyto bloky“ -- to je naštěstí přesně, co dělají smyčky.
@@ -65,7 +61,7 @@
 	\end{question}
 
 	\begin{solution}
-		\begin{figure}[h!]
+		\begin{figure}
 			\centering
 			\begin{minipage}{0.5\textwidth}
 				\includegraphics[width=\linewidth]{../Images/02/sol4.png}
@@ -78,7 +74,7 @@
 	\end{question}
 
 	\begin{solution}
-		\begin{figure}[h!]
+		\begin{figure}
 			\centering
 			\begin{minipage}{0.5\textwidth}
 				\includegraphics[width=\linewidth]{../Images/02/sol5.png}
@@ -90,6 +86,7 @@
 	Zatím umíme zapnout daný motor a na nějakou dobu, ale občas by se nám hodilo říct motoru „otoč se o tolik stupňů/otáček.“ Kombinací příkazů motoru a smyček toho můžeme docílit. Budeme k tomu potřebovat následující nové bloky:
 	\begin{itemize}
 		\blockMotorDistance
+		\blockMotorVelocity
 		\blockWaitUntil
 		\blockMotorDone
 	\end{itemize}
@@ -98,16 +95,27 @@
 
 	K tomu, aby tedy robot jel rovně 3 otáčky kol, můžeme udělat např. toto:
 
-	\begin{figure}[h!]
+	\begin{figure}
 		\centering
 		\begin{minipage}{0.5\textwidth}
 			\includegraphics[width=\linewidth]{../Images/02/sol.png}
 		\end{minipage}
 	\end{figure}
 
+	TODO: nastavování rychlosti
+
 	\begin{question}
-		Naprogramujte robota, aby jel rovně pět otáček, obrátil se (otáčením doleva/doprava, opět pomocí otáček) a poté jel dvanáct otáček dozadu.
+		Naprogramujte robota, aby jel rovně tři otáčky, otočil se (otáčením doleva/doprava, opět pomocí odhadnutí otáček) a poté jel dvě otáčky dozadu.
 	\end{question}
+
+	\begin{solution}%TODO: fixme formátování?
+		\begin{figure}
+			\centering
+			\begin{minipage}{0.5\textwidth}
+				\includegraphics[width=\linewidth]{../Images/02/sol6.png}
+			\end{minipage}
+		\end{figure}
+	\end{solution}
 
 	\begin{question*}
 		Vytvořte pro robota slalomovou dráhu (např. z ruliček/slepených papírů) a naprogramujte robota, aby jí co nejrychlejí projel a vrátil se zpět do cíle. Bonusové body za to, pokud cestou nepřevrhne ani jednu tyčku.

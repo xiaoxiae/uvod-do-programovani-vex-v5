@@ -4,17 +4,17 @@
 \begin{document}
 	\section{Úvod do prostředí Robot Mesh studio}
 
-	Našeho robota budeme programovat v prostředí Robot Mesh studio, které je zdarma dostupné na webové stránce \href{https://www.robotmesh.com/studio}{https://www.robotmesh.com/studio}. Robota lze přes toto prostředí programovat v několika jazycích, pro nás budou nejdůležitější \textbf{Blocky} a \textbf{Python}.
+	Našeho robota budeme programovat v prostředí Robot Mesh studio, které je zdarma dostupné na webové stránce \href{https://www.robotmesh.com/studio}{https://www.robotmesh.com/studio}. Robota lze přes toto prostředí programovat v několika jazycích, pro nás budou nejdůležitější Blocky a Python.
 
 	V rámci této kapitoly se naučíme:
 	\begin{itemize}
 		\item vytvářet nové projekty,
 		\item připojovat robota, aby s ním šlo v prostředí komunikovat a
-		\item spouštět základní programy v jazyce \textbf{Blocky}.
+		\item spouštět základní programy v jazyce Blocky.
 	\end{itemize}
 
 	\subsection{Vytváření nového projektu}
-	K tomu, aby s prohlížečem (ve kterém budeme robota programovat) robot komunikoval, je potřeba nainstalovat do prohlížeče addon. Aktuálně je dostupný pouze pro \textbf{FireFox} (\href{https://addons.mozilla.org/en-US/firefox/addon/robot-mesh-connect/}{odkaz zde}) a \textbf{Google Chrome} (\href{https://chrome.google.com/webstore/detail/robot-mesh-connect-app/mapfkcmnklanficcnnjkgeneakedmjkp}{odkaz zde}).
+	K tomu, aby s prohlížečem (ve kterém budeme robota programovat) robot komunikoval, je potřeba nainstalovat do prohlížeče addon. Aktuálně je dostupný pouze pro \href{https://addons.mozilla.org/en-US/firefox/addon/robot-mesh-connect/}{FireFox} a \href{https://chrome.google.com/webstore/detail/robot-mesh-connect-app/mapfkcmnklanficcnnjkgeneakedmjkp}{Google Chrome}.
 
 	Po nainstalování addonu pro váš prohlížeč jděte na stránku \href{https://www.robotmesh.com/studio}{https://www.robotmesh.com/studio}:
 
@@ -63,18 +63,18 @@
 	\subsection{Nastavení robota}
 	Zapněte robota, přes USB ho připojte k počítači a obnovte okno -- text \textit{Detecting RMC plugin...} by měl zmizet. Je také možné, že se místo této zprávy objeví požadavek na updatování firmwaru robota. Ten můžete odkliknout a počkat, než se update nainstaluje.
 
-	Před tím, než robota začneme programovat, je potřeba nastavit motory. Na našem robotu by motory podvozku měly být připojeny k portům $1$ a $10$ -- v hardwarové části tedy klikněte na ozubené kolečko napravo od čísla $1$ a poté:
+	Před tím, než robota začneme programovat, je potřeba nastavit motory. Na našem robotu by motory podvozku měly být připojeny k portům $1$ a $10$ -- v hardwarové části tedy klikněte na \centerimage{\baselineskip}{../Images/ui/gear.png} napravo od čísla \textbf{1} a poté:
 
 	\begin{figure}[h!]%
 		\begin{subfigure}{.3\textwidth}%
 			\centering%
 			\frame{\includegraphics[width=\linewidth]{../Images/01/add-motors-1.png}}%
-			\caption{vyberte „motor“}%
+			\caption{vyberte \textbf{motor}}%
 		\end{subfigure} \hspace{.045\textwidth}%
 		\begin{subfigure}{.3\textwidth}%
 			\centering%
 			\frame{\includegraphics[width=\linewidth]{../Images/01/add-motors-2.png}}
-			\caption{klikněte na ok}%
+			\caption{klikněte na \textbf{OK}}%
 		\end{subfigure} \hspace{.045\textwidth}%
 		\begin{subfigure}{.3\textwidth}%
 			\centering%
@@ -96,9 +96,9 @@
 		\end{minipage}
 	\end{figure}
 
-	Vytvoříme ho tak, že v příkazové části klikneme na \textbf{VEX V5 Motors}, najdeme příkaz po startu a myší ho přetáhneme přímo pod start. Pro druhý rovněž opakujeme, ale \texttt{motor\_1} změníme na \texttt{motor\_10}. Příkaz \blockWaitImage najdeme v sekci \textbf{Robot Mesh}. Pro spuštění programu stačí v ovládací části stisknout modré tlačítko \textbf{Run}.
+	Vytvoříme ho tak, že v příkazové části klikneme na \textbf{VEX V5 Motors}, najdeme příkaz po startu a myší ho přetáhneme přímo pod start. Pro druhý rovněž opakujeme, ale motor změníme na ten druhý. Příkaz \blockWaitImage najdeme v sekci \textbf{Robot Mesh}. Program spustíme tlačítkem \centerimage{2em}{../Images/ui/play.png}.
 
-	Robot se však místo toho, aby jel rovně, začal točit! To je kvůli tomu, že jeden motor je nainstalovaný opačným směrem než ten druhý a „dopředu“ pro něj tedy znamená to, co pro druhý „dozadu.“ Tento problém vyřešíme tak, že pro obrácený motor klikneme v hardwarové části na kolečko a zaškrtneme \textbf{Reverse polarity:}
+	Robot se však místo toho, aby jel rovně, začal točit! To je kvůli tomu, že jeden motor je nainstalovaný opačným směrem než ten druhý a „dopředu“ pro něj tedy znamená to, co pro druhý „dozadu.“ Pro obrácený motor proto klikneme v hardwarové části na \centerimage{\baselineskip}{../Images/ui/gear.png} a zaškrtneme \textbf{Reverse polarity:}
 
 	\begin{figure}[h!]%
 		\begin{subfigure}{.49\textwidth}%
@@ -112,6 +112,15 @@
 	\end{figure}
 
 	Nyní zkusme spustit program znovu. Robot by měl správně jet dopředu.
+
+	\subsubsection{Pozastavování a nahrávání}
+	Kromě spouštění programů by se nám také hodilo program zastavit. Toho můžeme docílit tlačítkem \centerimage{2em}{../Images/ui/stop.png}, které je napravo od tlačítka \centerimage{2em}{../Images/ui/play.png}, nahoře v ovládací části.
+
+	Pro testování pokročilejších programů se nám však může stát, že by se nám mohlo hodit program do robota pouze nahrát, a spustit to až po odpojení kabelu/nastavení robota. K tomu slouží tlačítko \centerimage{2em}{../Images/ui/download.png}, které je dostupné kliknutím na \centerimage{\baselineskip}{../Images/ui/dropdown.png}, nahoře v ovládací časti.
+
+	\begin{question}
+		Nahrajte tímto způsobem náš první program, robota odpojte a teprve poté ho přes jeho display spusťte.
+	\end{question}
 
 	\subsection{Programování virtuálního robota}
 	Jedna z alternativ k programování reálného robota (toho doma každý k dispozici nemá...) je stránka \href{http://www.robotmesh.com/create/176384}{Hour of Code}, na které je možné programy psát a vykonávat na virtuálním robotovi v simulaci.

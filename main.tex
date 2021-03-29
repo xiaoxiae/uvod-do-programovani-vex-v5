@@ -21,11 +21,17 @@ linenos,
 autogobble
 }
 
+% ---------------------------------------- BIBLIOGRAFIE ----------------------------------------
 \usepackage[backend=biber, style=numeric]{biblatex}
 \addbibresource{main.bib}
 
+% ---------------------------------------- JEDNOTKY ----------------------------------------
 \usepackage{siunitx}
 \sisetup{per-mode = symbol}
+
+% ---------------------------------------- FLOATY ----------------------------------------
+\usepackage{float}
+\floatplacement{figure}{H}
 
 % ---------------------------------------- PŘÍKLADY ----------------------------------------
 % https://tex.stackexchange.com/questions/164113/the-exercise-package-in-list-form
@@ -72,6 +78,11 @@ autogobble
 
 \usepackage{hyperref}
 \urlstyle{same}
+\hypersetup{
+    colorlinks=true,
+    urlcolor=blue,
+    linkcolor=black,%TOC
+}
 
 \usepackage{titlesec}
 \usepackage{subfiles}
@@ -144,27 +155,31 @@ autogobble
 
 % ---------------------------------------- DEFINICE BLOKŮ ----------------------------------------
 \newcommand{\block}{$\vcenter{\hbox{\includegraphics[height=0.8em]{../Images/blocky-logo.png}}}$}
-\newcommand{\blockimage}[2]{$\vcenter{\hbox{\includegraphics[height=#1]{#2}}}$}
+\newcommand{\centerimage}[2]{$\vcenter{\hbox{\includegraphics[height=#1]{#2}}}$}
 
 
-\newcommand{\blockMotorStart}{\item[\block] \blockimage{2em}{../Images/blocks/motor-start.png} -- \parbox{0.545\textwidth}{zapne daný motor dopředu (\textit{forward}) nebo dozadu (\textit{reverse}) na danou rychlost (\textit{velocity}) v procentech.}}
-\newcommand{\blockMotorStop}{\item[\block] \blockimage{1.6em}{../Images/blocks/motor-stop.png} -- vypne daný motor.}
-\newcommand{\blockMotorDistance}{\item[\block] \blockimage{2em}{../Images/blocks/motor-distance-start.png} -- \parbox{0.525\textwidth}{zapne motor, dokud se neotočí o daný počet stupňů (\textit{degrees}) nebo otáček (\textit{revolutions}). Je neblokující -- zapne motor a jde na další block.}}
+\newcommand{\blockMotorStart}{\item[\block] \centerimage{2em}{../Images/blocks/motor-start.png} -- \parbox{0.545\textwidth}{zapne daný motor dopředu (\textit{forward}) nebo dozadu (\textit{reverse}) na danou rychlost (\textit{velocity}) v procentech.}}
+\newcommand{\blockMotorStop}{\item[\block] \centerimage{1.6em}{../Images/blocks/motor-stop.png} -- vypne daný motor.}
+\newcommand{\blockMotorDistance}{\item[\block] \centerimage{2em}{../Images/blocks/motor-distance-start.png} -- \parbox{0.525\textwidth}{zapne motor, dokud se neotočí o daný počet stupňů (\textit{degrees}) nebo otáček (\textit{revolutions}). Je neblokující -- zapne motor a jde na další block.}}
+\newcommand{\blockMotorVelocity}{\item[\block] \centerimage{2em}{../Images/blocks/motor-velocity.png} -- nastaví rychlost motoru, ale nezapne ho!}
 
-\newcommand{\blockMotorDone}{\item[\block] \blockimage{1.6em}{../Images/blocks/motor-done.png} -- podmínka která říká, zda daný motor skončil.}
+\newcommand{\blockMotorDoneImage}{\centerimage{1.6em}{../Images/blocks/motor-done.png} }
+\newcommand{\blockMotorDone}{\item[\block] \blockMotorDoneImage -- podmínka která říká, zda daný motor skončil.}
 
-\newcommand{\blockLoop}{\item[\block] \blockimage{4em}{../Images/blocks/loop.png} -- opakuje bloky uvnitř několikrát.}
-\newcommand{\blockLoopForever}{\item[\block] \blockimage{4em}{../Images/blocks/loop-forever.png} -- opakuje bloky uvnitř donekonečna.}
-\newcommand{\blockLoopWhile}{\item[\block] \blockimage{4em}{../Images/blocks/loop-while.png} -- \parbox{0.725\textwidth}{opakuje bloky uvnitř, dokud (\textit{while}) nebo než (\textit{until}) platí podmínka.}}
+\newcommand{\blockLoop}{\item[\block] \centerimage{4em}{../Images/blocks/loop.png} -- opakuje bloky uvnitř několikrát.}
+\newcommand{\blockLoopForever}{\item[\block] \centerimage{4em}{../Images/blocks/loop-forever.png} -- opakuje bloky uvnitř donekonečna.}
+\newcommand{\blockLoopWhile}{\item[\block] \centerimage{4em}{../Images/blocks/loop-while.png} -- \parbox{0.725\textwidth}{opakuje bloky uvnitř, dokud (\textit{while}) nebo než (\textit{until}) platí podmínka.}}
 
-\newcommand{\blockWaitImage}{\blockimage{2em}{../Images/blocks/wait.png} }
+\newcommand{\blockWaitImage}{\centerimage{2em}{../Images/blocks/wait.png} }
 \newcommand{\blockWait}{\item[\block] \blockWaitImage -- čeká daný čas.}
-\newcommand{\blockWaitUntil}{\item[\block] \blockimage{1.6em}{../Images/blocks/wait-until.png} -- čeká, než (\textit{until}) platí podmínka.}
-\newcommand{\blockStartImage}{\blockimage{1.6em}{../Images/blocks/start.png} }
+\newcommand{\blockWaitUntil}{\item[\block] \centerimage{1.6em}{../Images/blocks/wait-until.png} -- čeká, než (\textit{until}) platí podmínka.}
+\newcommand{\blockStartImage}{\centerimage{1.6em}{../Images/blocks/start.png} }
 \newcommand{\blockStart}{\item[\block] \blockStartImage -- startovní blok pro každý Blocky program.}
 
-\newcommand{\blockFunctionDefinition}{\item[\block] \blockimage{4em}{../Images/blocks/function-definition.png} -- definování funkce; jméno lze upravit kliknutím.}
-\newcommand{\blockFunctionCall}{\item[\block] \blockimage{2em}{../Images/blocks/function-call.png} -- volání funkce.}
+\newcommand{\blockFunctionDefinition}{\item[\block] \centerimage{4em}{../Images/blocks/function-definition.png} -- definování funkce; jméno lze upravit kliknutím.}
+\newcommand{\blockFunctionCall}{\item[\block] \centerimage{2em}{../Images/blocks/function-call.png} -- volání funkce.}
+
+\newcommand{\blockBumperPressed}{\item[\block] \centerimage{1.6em}{../Images/blocks/bumper-pressed.png} -- podmínka, která říká, zda je daný senzor stisknutý.}
 
 \setcounter{secnumdepth}{0}
 \section{Na úvod}
@@ -185,7 +200,7 @@ Příklady označené $\bigstar$ jsou časově/nápadově náročnější než o
 Příklady, u kterých to dává smysl, jsou rovněž dostupné v části \nameref{cha:sol} -- pokud se na nějakém problému zaseknete, nebo si prostě nebudete jisti řešením, nebojte se si ho v této části prohlédnout.
 
 \subsection{Chyby, překlepy, doplňky}
-Pokud někde zpozorujete chybu/překlep, nebo máte pocit, že by něco šlo napsat lépe, tak mě buďto kontaktuje na adrese \href{mailto:tomas@slama.dev}{tomas@slama.dev}, nebo vytvořte issue/pull request na stránce \url{https://github.com/xiaoxiae/uvod-do-programovani-vex-v5}.
+Pokud někde odhalíte chybu/překlep, nebo máte pocit, že by něco šlo napsat lépe, tak mě buďto kontaktuje na adrese \href{mailto:tomas@slama.dev}{tomas@slama.dev}, nebo vytvořte issue/pull request na stránce \url{https://github.com/xiaoxiae/uvod-do-programovani-vex-v5}.
 
 \newpage
 
@@ -215,6 +230,7 @@ Pokud někde zpozorujete chybu/překlep, nebo máte pocit, že by něco šlo nap
 	\blockMotorStart
 	\blockMotorStop
 	\blockMotorDistance
+	\blockMotorVelocity
 \end{itemize}
 
 \subsection{Smyčky \where{Loops}}
@@ -236,6 +252,11 @@ Pokud někde zpozorujete chybu/překlep, nebo máte pocit, že by něco šlo nap
 \begin{itemize}
 	\blockFunctionDefinition
 	\blockFunctionCall
+\end{itemize}
+
+\subsection{Senzory \where{TriPort Inputs}}
+\begin{itemize}
+	\blockBumperPressed
 \end{itemize}
 
 \newpage

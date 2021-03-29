@@ -9,7 +9,7 @@
 
 	Jeden z nejčastějších typů enkóderů je optický enkóder. Funguje na principu světelného senzoru, na který svítí světlo (většinou lazer). Otáčením kolečka se senzor postupně zakrývá/odkrývá a touto změnou je tedy možné určit, že se kolečko otočilo.
 
-	\begin{figure}[h!]%
+	\begin{figure}
 		\centering%
 		\includegraphics[width=0.25\linewidth]{../Images/03/encoder-through.pdf}
 		\hspace{.15\textwidth}%
@@ -17,20 +17,42 @@
 		\caption{Polohy optického enkóderu; nalevo světlo propouští, napravo blokuje.}
 	\end{figure}
 
-	Všechny motory, se kterými náš robot pracují, v sobě už enkóder zabudovaný mají. Využívá ho např. blok \blockimage{1.8em}{../Images/blocks/motor-distance-start.png}, který na jeho základě měří otáčky kola.
+	Všechny motory, se kterými náš robot pracují, v sobě už enkóder zabudovaný mají. Využívá ho např. blok \centerimage{1.8em}{../Images/blocks/motor-distance-start.png}, který na jeho základě měří otáčky kola.
+
+	\begin{question}
+		Kolečko nahoře odkrývá a zakrývá senzor, z čehož počítáme uraženou vzdálenost. Dokážeme z toho také určit, jakým směrem se kolečko točí, nebo budeme potřebovat kolečka dvě?
+	\end{question}
+
+	\begin{solution}
+		Nedokážeme, protože střídavým zakrýváním/odkrýváním senzoru můžeme pouze sledovat, že se kolečko otáčí. Ke správnému určení směru je potřeba další kolečko, zdroj světla a senzor, které jsou od původního kolečka o kousek pootočené.
+
+		Nyní už dokážeme pozorovat, zda se nejprve zakryl první senzor a až poté druhý, nebo nejdříve druhý a až poté první, což nám přesně určí směr (a samozřejmě vzdálenost) otáčení.
+	\end{solution}
 
 	\subsection{Senzor nárazu}
 	Senzor nárazu (anglicky \textit{Bumper Switch}) je další ze senzorů, které budeme k pohybu robota využívat. Hodí se, když budeme chtít rozpoznávat, zda robot náhodou do něčeho nenarazil a např. by se tedy měl otočit a jet jinam. Funguje na velice přímočarém principu -- pokud není stlačen, tak obvod uvnitř není propojený; jakmile stlačen je, tak se obvod propojí.
-
-	\subsubsection{Nastavení senzoru}
-	TODO: že je to dole v A
 
 	\begin{question}
 		Přidělejte na zadní část našeho robota dva senzory nárazu.
 	\end{question}
 
+	\subsubsection{Nastavení senzoru}
+	K připojení senzoru tohoto typu (tři drátky) klikneme na \centerimage{\baselineskip}{../Images/ui/gear.png} napravo od písmene, do kterého je senzor na našem robotu zapojený (A-H), vybereme \textbf{Bumper} a stiskneme \textbf{OK}.
+
 	\subsubsection{Programování se senzorem}
-	TriPort Inputs
+	Bloky k programování těchto typů vstupů jsou k nalezení v sekci \textbf{TriPort Input}. Pro senzor nárazu nám bude stačit následující:
+	\begin{itemize}
+		\blockBumperPressed
+	\end{itemize}
+
+	Použijeme ho stejným způsobem, jako jsme používali \blockMotorDoneImage v kapitole \ref{cha:distanceride}:
+
+	\begin{figure}
+		\centering
+		\begin{minipage}{0.5\textwidth}
+			\includegraphics[width=\linewidth]{../Images/02/sol7.png}
+		\end{minipage}
+	\end{figure}
 
 	\begin{question}
 		Naprogramujte robota, aby opakovaně prováděl následující:
