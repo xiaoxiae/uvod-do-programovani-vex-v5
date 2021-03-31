@@ -1,8 +1,8 @@
 # Úvod do programování VEX V5
-Zdrojový kód (a nejaktuálnější verze) učebnice „Úvod do programování VEX V5.“
+Zdrojový kód (a nejaktuálnější verze) učebnice „Úvod do programování VEX V5“ a doplňujícího textu „Metodika k programování VEX V5“
 
 ## Kompilování
-K vysázení dokumentu použijte
+K vysázení dokumentů použijte
 ```
 latexmk -pdf -outdir=Build/ -shell-escape main.tex methodology.tex
 ```

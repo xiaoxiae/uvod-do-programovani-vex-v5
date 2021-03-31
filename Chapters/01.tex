@@ -16,7 +16,7 @@
 	\subsection{Vytváření nového projektu}
 	K tomu, aby s prohlížečem (ve kterém budeme robota programovat) robot komunikoval, je potřeba nainstalovat do prohlížeče addon. Aktuálně je dostupný pouze pro \href{https://addons.mozilla.org/en-US/firefox/addon/robot-mesh-connect/}{FireFox} a \href{https://chrome.google.com/webstore/detail/robot-mesh-connect-app/mapfkcmnklanficcnnjkgeneakedmjkp}{Google Chrome}.
 
-	Po nainstalování addonu pro váš prohlížeč jděte na stránku \href{https://www.robotmesh.com/studio}{https://www.robotmesh.com/studio}:
+	Po nainstalování addonu přejdeme na stránku \href{https://www.robotmesh.com/studio}{https://www.robotmesh.com/studio}:
 
 	\begin{figure}[h!]
 		\centering
@@ -26,20 +26,20 @@
 	K vytvoření nového projektu stačí kliknout na \textbf{New Project} a poté:
 
 	\begin{figure}[h!]%
-		\begin{subfigure}{.3\textwidth}%
+		\begin{subfigure}[t]{.3\textwidth}%
 			\centering%
 			\frame{\includegraphics[width=\linewidth]{../Images/01/create-project-1.png}}%
 			\caption{kliknout na \textbf{VEX V5}}%
 		\end{subfigure} \hspace{.045\textwidth}%
-		\begin{subfigure}{.3\textwidth}%
+		\begin{subfigure}[t]{.3\textwidth}%
 			\centering%
 			\frame{\includegraphics[width=\linewidth]{../Images/01/create-project-2.png}}
 			\caption{kliknout na \textbf{Blocky}}%
 		\end{subfigure} \hspace{.045\textwidth}%
-		\begin{subfigure}{.3\textwidth}%
+		\begin{subfigure}[t]{.3\textwidth}%
 			\centering%
 			\frame{\includegraphics[width=\linewidth]{../Images/01/create-project-3.png}}%
-			\caption{kliknout na \textbf{Create}}%
+			\caption{kliknout na \textbf{Create} (případně změnit jméno projektu)}%
 		\end{subfigure}%
 	\end{figure}
 
@@ -59,6 +59,10 @@
 		\centering
 		\frame{\includegraphics[width=\linewidth]{../Images/01/default-robotmesh-studio.png}}
 	\end{figure}
+
+	\begin{question}
+		Vytvořte si nový projekt s nějakým zajímavým jménem.
+	\end{question}
 
 	\subsection{Nastavení robota}
 	Zapněte robota, přes USB ho připojte k počítači a obnovte okno -- text \textit{Detecting RMC plugin...} by měl zmizet. Je také možné, že se místo této zprávy objeví požadavek na updatování firmwaru robota. Ten můžete odkliknout a počkat, než se update nainstaluje.
@@ -82,6 +86,10 @@
 			\caption{opakujte pro motor 10}%
 		\end{subfigure}%
 	\end{figure}
+
+	\begin{question}
+		Přiřaďte vašemu robotu motory. Nastavte jejich jména na \texttt{motor\_pravy} a \texttt{motor\_levy}.
+	\end{question}
 
 	\subsection{Náš první Blocky program}
 

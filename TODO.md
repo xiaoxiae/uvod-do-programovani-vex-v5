@@ -2,7 +2,8 @@
 ## Obecné
 [x] README
 [ ] Link na nejnovější asset do dokumentu
-[ ] Zkonsistentnit tlustý a italics text
+[x] Zkonsistentnit tlustý a italics text
+[ ] Zkonsistentnit používání „my“ a „vy“
 
 ## Kapitoly
 [x] 1 - prostředí

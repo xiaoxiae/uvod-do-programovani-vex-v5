@@ -2,49 +2,11 @@
 
 
 \begin{document}
-	\section{Základy programování v jazyce Python}
-	Až doposud jsme programovali v jazyce Blocky, protože je příjemný na používání a pochopení. Může ale být v některých věcech dost omezující. Kdybychom v něm chtěli programovat pokročilejší programy (nad rámec této učebnice), tak by se nám to dělalo velice špatně.
+	\section{Kompetitivní programování}
+	TODO: něco o VEX competitionu
 
-	Naštěstí jsme programováním v jazyce Blocky vlastně programovali také v Pythonu, protože Blocky je vlastně „nadstavba“ Pythonu, aby se s ním hezky a interaktivně pracovalo. To je skvělé, protože díky tomu je snadnější se Python naučit studováním toho, jak vypadají naše Blocky programy převedené do Pythonu.
+	jaké příkazy to ještě má
 
-	Zkusme se podívat, jak vypadá jeden z našich základních programů v Blocky, převedený do Pythonu. Jedná se o úplně první program, který řekne robotu, aby jel tři vteřiny rovně.
-
-	\begin{minted}{python}
-		import vex
-		import drivetrain
-		import smartdrive
-		import sys
-		
-		#region config
-		brain    = vex.Brain()
-		motor_1  = vex.Motor(vex.Ports.PORT1, vex.GearSetting.RATIO18_1, False)
-		motor_10 = vex.Motor(vex.Ports.PORT10, vex.GearSetting.RATIO18_1, False)
-		#endregion config
-		
-		# main thread
-		motor_1.spin(vex.FORWARD, 100, vex.PERCENT)
-		motor_10.spin(vex.FORWARD, 100, vex.PERCENT)
-		vex.wait(3,vex.SECONDS)
-		motor_1.stop(vex.BrakeType.HOLD)
-		motor_10.stop(vex.BrakeType.HOLD)	
-	\end{minted}
-
-	Pojďme si program rozebrat po částech.
-
-	\begin{minted}{python}
-		import vex
-		import drivetrain
-		import smartdrive
-		import sys
-	\end{minted}
-
-	TODO
-
-
-	\subsection{Proměnné}
-
-	\subsection{Smyčky}
-
-	\subsection{Podmínky}
-
+	\section{Kam dál?}
+	TODO: kam se dál podívat, když by je zajímala robotika
 \end{document}
