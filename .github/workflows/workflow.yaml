@@ -13,9 +13,11 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: main.tex
-          args: "-pdf -shell-escape -outdir=Build/"
+          args: "-pdf -shell-escape -outdir=Build/ methodology.tex main.tex"
       - name: Place the PDF to the workflow tab
         uses: actions/upload-artifact@v2
         with:
           name: PDF
-          path: Build/main.pdf
+          path: |
+            Build/main.pdf
+            Build/methodology.pdf
