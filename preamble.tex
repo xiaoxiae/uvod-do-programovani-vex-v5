@@ -2,18 +2,20 @@
 
 \usepackage[czech]{babel}
 \usepackage{a4wide}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
+\usepackage{grffile}
 \usepackage{fancyhdr}
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{amsmath}
+\usepackage{luavlna}
+\AtBeginDocument{\singlechars{czech}{AaIiVvOoUuSsZzKk}}
 \usepackage{mathtools}
 \usepackage{mleftright}
 \usepackage{subcaption}
 \usepackage{gensymb}
 \usepackage{parskip}
 \usepackage{titlesec}
+\usepackage[normalem]{ulem}
 \usepackage{subfiles}
 \usepackage[bottom]{footmisc}  % forcing footnotes to be at the very bottom
 
@@ -127,7 +129,6 @@ autogobble
 \fancyfoot{}
 \fancyfoot[R]{\thepage}
 
-
 % ---------------------------------------- BARVY ----------------------------------------
 \definecolor{ceruleanblue}{rgb}{0.16, 0.32, 0.75}
 \definecolor{motorlight}{rgb}{0.85, 0.80, 0.70}
@@ -136,38 +137,58 @@ autogobble
 
 
 % ---------------------------------------- DEFINICE BLOKŮ ----------------------------------------
-\newcommand{\block}{$\vcenter{\hbox{\includegraphics[height=0.8em]{../Images/blocky-logo.png}}}$}
+\newcommand{\block}{$\vcenter{\hbox{\includegraphics[height=0.8em]{Images/blocky-logo.png}}}$}
 \newcommand{\centerimage}[2]{$\vcenter{\hbox{\includegraphics[height=#1]{#2}}}$}
 
+% TODO: sizes to variable
+% TODO: do this more programatically...
+\newcommand{\blockMotorStart}{\item[\block] \centerimage{2em}{Images/blocks/motor-start.png} -- \parbox{0.545\textwidth}{zapne daný motor dopředu (\textit{forward}) nebo dozadu (\textit{reverse}) na danou rychlost (\textit{velocity}) v procentech.}}
+\newcommand{\blockMotorStop}{\item[\block] \centerimage{1.6em}{Images/blocks/motor-stop.png} -- vypne daný motor.}
+\newcommand{\blockMotorDistanceImage}{\centerimage{2em}{Images/blocks/motor-distance-start.png} }
+\newcommand{\blockMotorDistance}{\item[\block] \blockMotorDistanceImage -- \parbox{0.525\textwidth}{zapne motor, dokud se neotočí o daný počet stupňů (\textit{degrees}) nebo otáček (\textit{revolutions}). Je neblokující -- zapne motor a jde na další block.}}
+\newcommand{\blockMotorVelocityImage}{\centerimage{2em}{Images/blocks/motor-velocity.png} }
+\newcommand{\blockMotorVelocity}{\item[\block] \blockMotorVelocityImage -- nastaví rychlost motoru, ale nezapne ho!}
 
-\newcommand{\blockMotorStart}{\item[\block] \centerimage{2em}{../Images/blocks/motor-start.png} -- \parbox{0.545\textwidth}{zapne daný motor dopředu (\textit{forward}) nebo dozadu (\textit{reverse}) na danou rychlost (\textit{velocity}) v procentech.}}
-\newcommand{\blockMotorStop}{\item[\block] \centerimage{1.6em}{../Images/blocks/motor-stop.png} -- vypne daný motor.}
-\newcommand{\blockMotorDistance}{\item[\block] \centerimage{2em}{../Images/blocks/motor-distance-start.png} -- \parbox{0.525\textwidth}{zapne motor, dokud se neotočí o daný počet stupňů (\textit{degrees}) nebo otáček (\textit{revolutions}). Je neblokující -- zapne motor a jde na další block.}}
-\newcommand{\blockMotorVelocity}{\item[\block] \centerimage{2em}{../Images/blocks/motor-velocity.png} -- nastaví rychlost motoru, ale nezapne ho!}
-
-\newcommand{\blockMotorDoneImage}{\centerimage{1.6em}{../Images/blocks/motor-done.png} }
+\newcommand{\blockMotorDoneImage}{\centerimage{1.6em}{Images/blocks/motor-done.png} }
 \newcommand{\blockMotorDone}{\item[\block] \blockMotorDoneImage -- podmínka která říká, zda daný motor skončil.}
 
-\newcommand{\blockLoop}{\item[\block] \centerimage{4em}{../Images/blocks/loop.png} -- opakuje bloky uvnitř několikrát.}
-\newcommand{\blockLoopForever}{\item[\block] \centerimage{4em}{../Images/blocks/loop-forever.png} -- opakuje bloky uvnitř donekonečna.}
-\newcommand{\blockLoopWhile}{\item[\block] \centerimage{4em}{../Images/blocks/loop-while.png} -- \parbox{0.725\textwidth}{opakuje bloky uvnitř, dokud (\textit{while}) nebo než (\textit{until}) platí podmínka.}}
+\newcommand{\blockLoop}{\item[\block] \centerimage{4em}{Images/blocks/loop.png} -- opakuje bloky uvnitř několikrát.}
+\newcommand{\blockLoopForever}{\item[\block] \centerimage{4em}{Images/blocks/loop-forever.png} -- opakuje bloky uvnitř donekonečna.}
+\newcommand{\blockLoopWhile}{\item[\block] \centerimage{4em}{Images/blocks/loop-while.png} -- \parbox{0.725\textwidth}{opakuje bloky uvnitř, dokud (\textit{while}) nebo než (\textit{until}) platí podmínka.}}
 
-\newcommand{\blockWaitImage}{\centerimage{2em}{../Images/blocks/wait.png} }
+\newcommand{\blockWaitImage}{\centerimage{2em}{Images/blocks/wait.png} }
 \newcommand{\blockWait}{\item[\block] \blockWaitImage -- čeká daný čas.}
-\newcommand{\blockWaitUntil}{\item[\block] \centerimage{1.6em}{../Images/blocks/wait-until.png} -- čeká, než (\textit{until}) platí podmínka.}
-\newcommand{\blockStartImage}{\centerimage{1.6em}{../Images/blocks/start.png} }
+\newcommand{\blockWaitUntil}{\item[\block] \centerimage{1.6em}{Images/blocks/wait-until.png} -- čeká, než (\textit{until}) platí podmínka.}
+\newcommand{\blockStartImage}{\centerimage{1.6em}{Images/blocks/start.png} }
 \newcommand{\blockStart}{\item[\block] \blockStartImage -- startovní blok pro každý Blocky program.}
+\newcommand{\blockComment}{\item[\block] \centerimage{1.6em}{Images/blocks/comment.png} -- blok, který nic nedělá (pouze komentuje kód).}
 
-\newcommand{\blockFunctionDefinition}{\item[\block] \centerimage{4em}{../Images/blocks/function-definition.png} -- definování funkce; jméno lze upravit kliknutím.}
-\newcommand{\blockFunctionCall}{\item[\block] \centerimage{2em}{../Images/blocks/function-call.png} -- volání funkce TODO lepší vysvětlení?.}
+\newcommand{\blockFunctionDefinition}{\item[\block] \centerimage{4em}{Images/blocks/function-definition.png} -- definování funkce; jméno lze upravit kliknutím.}
+\newcommand{\blockFunctionCall}{\item[\block] \centerimage{2em}{Images/blocks/function-call.png} -- volání funkce TODO lepší vysvětlení?.}
 
-\newcommand{\blockBumperPressed}{\item[\block] \centerimage{1.6em}{../Images/blocks/bumper-pressed.png} -- podmínka, která říká, zda je daný senzor stisknutý.}
+\newcommand{\blockBumperPressed}{\item[\block] \centerimage{1.6em}{Images/blocks/bumper-pressed.png} -- podmínka, která říká, zda je daný senzor stisknutý.}
 
-\newcommand{\blockVariableCreate}{\item[\block] \centerimage{1.6em}{../Images/blocks/variable-create.png} -- vytvoří novou proměnnou.}
-\newcommand{\blockVariableChange}{\item[\block] \centerimage{1.6em}{../Images/blocks/variable-change.png} -- změní danou proměnnou o dané číslo.}
-\newcommand{\blockVariableGet}{\item[\block] \centerimage{1.6em}{../Images/blocks/variable-get.png} -- hodnota dané proměnné.}
-\newcommand{\blockVariableSet}{\item[\block] \centerimage{1.6em}{../Images/blocks/variable-set.png} -- nastaví hodnotu dané proměnné.}
+\newcommand{\blockVariableCreate}{\item[\block] \centerimage{1.6em}{Images/blocks/variable-create.png} -- vytvoří novou proměnnou.}
+\newcommand{\blockVariableChange}{\item[\block] \centerimage{1.6em}{Images/blocks/variable-change.png} -- změní danou proměnnou o dané číslo.}
+\newcommand{\blockVariableGet}{\item[\block] \centerimage{1.6em}{Images/blocks/variable-get.png} -- hodnota dané proměnné.}
+\newcommand{\blockVariableSet}{\item[\block] \centerimage{1.6em}{Images/blocks/variable-set.png} -- nastaví hodnotu dané proměnné.}
 
+\newcommand{\blockMathOperation}{\item[\block] \centerimage{2em}{Images/blocks/math-operation.png} -- spočítá výsledek dané matematické operace.}
+\newcommand{\blockMathTest}{\item[\block] \centerimage{2em}{Images/blocks/math-test.png} -- podmínka pro běžné matematické testy (sudé/liché, kladné/záporné...). .}
+\newcommand{\blockMathValue}{\item[\block] \centerimage{1.6em}{Images/blocks/math-value.png} -- číselná hodnota.}
+\newcommand{\blockMathConstant}{\item[\block] \centerimage{1.6em}{Images/blocks/math-constant.png} -- hodnota běžných matematických konstant ($\pi, e, \sqrt{2}\ldots$).}
+\newcommand{\blockMathRandom}{\item[\block] \centerimage{2em}{Images/blocks/math-random.png} -- hodnota náhodného čísla v daném rozmezí.}
+
+\newcommand{\blockLogicTrueImage}{\centerimage{1.6em}{Images/blocks/logic-true.png}}
+\newcommand{\blockLogicTrueImageBaseline}{\centerimage{\baselineskip}{Images/blocks/logic-true.png}}
+\newcommand{\blockLogicTrue}{\item[\block] \blockLogicTrueImage\ -- hodnota pravdy.}
+\newcommand{\blockLogicFalseImage}{\centerimage{1.6em}{Images/blocks/logic-false.png}}
+\newcommand{\blockLogicFalseImageBaseline}{\centerimage{\baselineskip}{Images/blocks/logic-false.png}}
+\newcommand{\blockLogicFalse}{\item[\block] \blockLogicFalseImage\ -- hodnota neprady.}
+
+\newcommand{\blockString}{\item[\block] \centerimage{1.6em}{Images/blocks/string.png} -- text.}
+\newcommand{\blockDisplayPrint}{\item[\block] \centerimage{2em}{Images/blocks/display-print.png} -- vypsání textu na daný řádek.}
+\newcommand{\blockDisplayClear}{\item[\block] \centerimage{2em}{Images/blocks/display-clear.png} -- smazání textu na daném řádku.}
 
 % ---------------------------------------- SDÍLENÉ PŘÍKAZY ----------------------------------------
 \newcommand{\errata}{%

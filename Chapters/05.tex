@@ -26,18 +26,36 @@
 	\subsection{Proměnné}
 	Proměnné jsou krabičky, do kterých si robot může při běhu programu ukládat informace různých druhů, jako např. čísla nebo slova. Jsou jedním z nejdůležitějších konceptů v programování ve všech jazycích a dovolují nám dělat řadu věcí, které bychom s našimi dosavadními znalostmi nemohli.
 
-	K vytvoření proměnné stačí jít do sekce \textbf{Variables} v příkazové části, kliknout na \centerimage{\baselineskip}{../Images/blocks/variable-create.png}, nějak jí pojmenovat a kliknout na \textbf{OK}. Jako jméno je vhodné zvolit něco, co odpovídá obsahu dané proměnné -- proměnná ukládající počet nárazů robota by se neměla jmenovat \texttt{mrkvový\_guláš}!
+	K vytvoření proměnné stačí jít do sekce \textbf{Variables} v příkazové části, kliknout na \centerimage{\baselineskip}{Images/blocks/variable-create.png}, nějak jí pojmenovat a kliknout na \textbf{OK}. Jako jméno je vhodné zvolit něco, co odpovídá obsahu dané proměnné -- proměnná ukládající počet nárazů robota by se rozhodně neměla jmenovat \texttt{mrkvový\_guláš}!
 
-	Po vytvoření libovolné proměnné budeme mít k dispozici příkazy, kterými s proměnnou budeme moci pracovat:
+	Po vytvoření libovolné proměnné budeme mít k dispozici příkazy, kterými s proměnnou budeme moci pracovat (k nalezení v části \textbf{Variables}):
 	\begin{itemize}
 		\blockVariableChange
 		\blockVariableGet
 		\blockVariableSet
 	\end{itemize}
 
-	Příklad použití proměnných v programu je např. pokud bychom chtěli napsat program, který otočí robota doprava o 90 stupňů potom 180 TODO dopsat tenhle problém.
+	 Příklad využití proměnných je např. tento program, který robota otáčí doleva o $1$ otáčku, poté o $2$, dále o $3$, apod. (s tím, že po jízdě vždy chvíli čeká):
 
-	\subsubsection{Čísla a matematika}
+	\begin{figure}[h!]%TODO: pozice
+		\centering
+		\begin{minipage}{0.5\textwidth}
+			\includegraphics[width=\linewidth]{Images/05/variable-program.png}
+		\end{minipage}
+	\end{figure}
+
+	Jména proměnných \texttt{i}, \texttt{j} a \texttt{k} jsou většinou používány pro to, když potřebujeme postupně procházet přes čísla $1, 2, \ldots$ (což právě v tomto příkladu potřebujeme).
+
+	\subsubsection{Čísla}
+	Čísla jsou jeden z druhů informací, které do proměnné můžeme ukládat. Hodí se např. když chceme počítat, kolikrát jsme narazili, o kolik stupňů jsme se otočili nebo kolik ještě otáček chceme dělat. K tomu, abychom s nimi mohli pracovat, se nám budou hodit následující bloky (k nalezení v části \textbf{Math}):
+  
+	\begin{itemize}
+		\blockMathOperation
+		\blockMathTest
+		\blockMathValue
+		\blockMathConstant
+		\blockMathRandom
+	\end{itemize}
 
 	\begin{question}
 		Naprogramujte robota, aby jel otáčku dopředu a dozadu, poté dvě otáčky dopředu a dozadu, apod. (donekonečna).
@@ -47,8 +65,32 @@
 		Naprogramujte robota, aby jel do trojúhelníku, poté do čtverce, poté do pětistěnu, apod. (donekonečna).
 	\end{question*}
 
+	\begin{question}
+		Naprogramujte robota, aby ujel vzdálenost, kterou mu na začátku programu uložíte do proměnné \texttt{vzdalenost} (v metrech). Všechny výsledky ke spočítání otáček/stupňů proveďte přes matematické bloky.
+	\end{question}
+
+	\begin{question}
+		Vytvořte bláznivého robota, který se na místě bude otáčet střídavě doprava/doleva o náhodný úhel.
+	\end{question}
+	
+	\subsubsection{Pravdivostní hodnoty}
+	Dalším druhem hodnot, které do proměnných můžeme ukládat, jsou pravdivostní hodnoty (anglicky \textit{boolean values}), které jsou buď pravda (\blockLogicTrueImageBaseline) nebo nepravda (\blockLogicTrueImageBaseline), obě k nalezení v části \textbf{Logic}. Hodí se k ukládání informace o tom, zda je/není něco pravda. Budou důležité v kapitole \ref{cha:logic}
+
 	\subsubsection{Text}
-	TODO: a jeho zobrazování!
+	Posledním druhem hodnot, se kterými se seznámíme, je text. Opět zde nepůjdeme příliš do detailu -- stačí nám vědět, že i text do proměnných ukládat umíme a můžeme s ním různými operacemi pracovat (k nalezení v částech \textbf{Text} a \textbf{VEX V5 Display}):
+
+	\begin{itemize}
+		\blockString
+		\blockDisplayPrint
+		\blockDisplayClear
+	\end{itemize}
+
+	\begin{question}
+		Naprogramujte robota, aby jel donekonečna rovně a ukazoval, kolik otáček již ujel.
+	\end{question}
+
+	\subsection{Podmínky}\label{cha:logic}
 
 	\subsection{Dálkové ovládání}
+
 \end{document}

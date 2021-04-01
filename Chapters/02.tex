@@ -19,7 +19,7 @@
 		\blockWait
 	\end{itemize}
 
-	Tento příkaz je blokující -- jakmile na něho při běhu programu dojde, tak musí počkat, než uplyne zadaný čas. Poté se začnou vykonávat bloky pod ním.
+	Tento příkaz je blokující -- jakmile na něho při běhu programu dojde, tak musí počkat, než uplyne zadaný čas. Poté se začnou vykonávat bloky pod ním. To mimo jiné znamená, že pokud je to poslední blok programu, tak neudělá nic, protože program ho vykoná a hned poté skončí (už nemá co dalšího vykonávat).
 
 	\begin{question}\label{que:basic}%
 		Naprogramujte robota, aby jel dvě vteřiny rovně, otočil se (otáčením doleva/doprava) a poté jel dvě vteřiny dozadu. Nastavte rychlost tak, aby robot jel rozumně rychle.
@@ -29,7 +29,7 @@
 		\begin{figure}
 			\centering
 			\begin{minipage}{0.5\textwidth}
-				\includegraphics[width=\linewidth]{../Images/02/sol2.png}
+				\includegraphics[width=\linewidth]{Images/02/sol2.png}
 			\end{minipage}
 		\end{figure}
 	\end{solution}
@@ -42,7 +42,7 @@
 		\begin{figure}
 			\centering
 			\begin{minipage}{0.5\textwidth}
-				\includegraphics[width=\linewidth]{../Images/02/sol3.png}
+				\includegraphics[width=\linewidth]{Images/02/sol3.png}
 			\end{minipage}
 		\end{figure}
 	\end{solution}
@@ -64,7 +64,7 @@
 		\begin{figure}
 			\centering
 			\begin{minipage}{0.5\textwidth}
-				\includegraphics[width=\linewidth]{../Images/02/sol4.png}
+				\includegraphics[width=\linewidth]{Images/02/sol4.png}
 			\end{minipage}
 		\end{figure}
 	\end{solution}
@@ -77,7 +77,7 @@
 		\begin{figure}
 			\centering
 			\begin{minipage}{0.5\textwidth}
-				\includegraphics[width=\linewidth]{../Images/02/sol5.png}
+				\includegraphics[width=\linewidth]{Images/02/sol5.png}
 			\end{minipage}
 		\end{figure}
 	\end{solution}
@@ -91,18 +91,16 @@
 		\blockMotorDone
 	\end{itemize}
 
-	Možná se zdá, ze by stačilo za \blockStartImage blok dát první blok v seznamu výše -- to ale stačit nebude, protože jakmile program dojde za poslední blok, tak vše skončí a robot se zastaví.
-
 	K tomu, aby tedy robot jel rovně 3 otáčky kol, můžeme udělat např. toto:
 
 	\begin{figure}
 		\centering
 		\begin{minipage}{0.5\textwidth}
-			\includegraphics[width=\linewidth]{../Images/02/sol.png}
+			\includegraphics[width=\linewidth]{Images/02/sol.png}
 		\end{minipage}
 	\end{figure}
 
-	TODO: nastavování rychlosti
+	Program nejprve nastaví rychlost motorům a následně je zapne na $3$ otáčky. Poté počká, než oba motory skončí (až se dotočí) a před koncem programu je vypne (což není úplně nutné, ale ničemu neškodí).
 
 	\begin{question}
 		Naprogramujte robota, aby jel rovně tři otáčky, otočil se (otáčením doleva/doprava, opět pomocí odhadnutí otáček) a poté jel dvě otáčky dozadu.
@@ -112,7 +110,7 @@
 		\begin{figure}
 			\centering
 			\begin{minipage}{0.5\textwidth}
-				\includegraphics[width=\linewidth]{../Images/02/sol6.png}
+				\includegraphics[width=\linewidth]{Images/02/sol6.png}
 			\end{minipage}
 		\end{figure}
 	\end{solution}
@@ -120,5 +118,17 @@
 	\begin{question*}
 		Vytvořte pro robota slalomovou dráhu (např. z ruliček/slepených papírů) a naprogramujte robota, aby jí co nejrychlejí projel a vrátil se zpět do cíle. Bonusové body za to, pokud cestou nepřevrhne ani jednu tyčku.
 	\end{question*}
+
+	\subsection{Komentáře}
+	Při psaní komplexnější programů je užitečné kód, který není na první pohled přehledný, komentovat. Je to příjemné jak pro ostatní programátory, kteří ho vidí poprvé, tak i pro vás, jako připomenutí (protože po měsíci vám bude připadat, že ho vidíte poprvé).
+
+	Ke psaní komentářů slouží následující blok:
+	\begin{itemize}
+		\blockComment
+	\end{itemize}
+
+	\begin{question}
+		Vezměte některý z vašich již vytvořených programů a hezky jej okomentujte.
+	\end{question}
 
 \end{document}

@@ -4,7 +4,7 @@ Zdrojový kód (a nejaktuálnější verze) učebnice „Úvod do programování
 ## Kompilování
 K vysázení dokumentů použijte
 ```
-latexmk -pdf -outdir=Build/ -shell-escape main.tex methodology.tex
+latexmk -pdf -outdir=Build/ -shell-escape -pdflatex=lualatex main.tex methodology.tex
 ```
 
 ## Chyby, překlepy, doplňky
