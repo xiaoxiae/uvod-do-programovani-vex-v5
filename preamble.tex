@@ -2,16 +2,13 @@
 
 \usepackage[czech]{babel}
 \usepackage{a4wide}
-\usepackage{grffile}
 \usepackage{fancyhdr}
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{amsmath}
-\usepackage{luavlna}
-\usepackage{booktabs}
 \usepackage{enumitem}
+\usepackage{booktabs}
 \usepackage{tabularx}
-\AtBeginDocument{\singlechars{czech}{AaIiVvOoUuSsZzKk}}
 \usepackage{mathtools}
 \usepackage{mleftright}
 \usepackage{subcaption}
@@ -43,6 +40,11 @@ autogobble
 }
 
 
+% ---------------------------------------- VLNA ----------------------------------------
+\usepackage{luavlna}
+\AtBeginDocument{\singlechars{czech}{AaIiVvOoUuSsZzKk}}
+
+
 % ---------------------------------------- BIBLIOGRAFIE ----------------------------------------
 \usepackage[backend=biber, style=numeric]{biblatex}
 \addbibresource{main.bib}
@@ -51,6 +53,25 @@ autogobble
 % ---------------------------------------- JEDNOTKY ----------------------------------------
 \usepackage{siunitx}
 \sisetup{per-mode = symbol}
+
+
+% ---------------------------------------- COLOR BOXY ----------------------------------------
+\usepackage[most]{tcolorbox}
+\newtcolorbox{sectionsummary}[1][]{%
+  attach boxed title to top center
+               = {yshift=-8pt},
+  colback      = white,
+  colframe     = black,
+  colbacktitle = white,
+  coltitle     = black,
+  title        = Naučíme se,
+  boxrule      = 0.5pt,
+  boxed title style={boxrule=0.5pt},
+  enhanced,
+}
+
+\setlength{\fboxrule}{0.5pt}
+\setlength{\fboxsep}{0pt}
 
 
 % ---------------------------------------- FLOATY ----------------------------------------
@@ -71,17 +92,11 @@ autogobble
 }
 
 \DeclareRobustCommand*\questionstar{\texorpdfstring{\bonusquestionsign}{* }}
-\DeclareRobustCommand*\questionstartwo{\texorpdfstring{\bonusquestionsigntwo}{* }}
 \DeclareRobustCommand*\bonusquestionsign{\llap{$\bigstar$\space}}
-\DeclareRobustCommand*\bonusquestionsigntwo{\llap{$\bigstar\bigstar$\space}}
 
 \NewQuSolPair
 	{question*}[name=\questionstar Příklad]
 	{solution*}[name=\questionstar Řešení]
-
-\NewQuSolPair
-	{question**}[name=\questionstartwo Příklad]
-	{solution**}[name=\questionstartwo Řešení]
 
 \DeclareTranslation{Czech}{exsheets-exercise-name}{Příklad}
 \DeclareTranslation{Czech}{exsheets-solution-name}{Řešení}
@@ -192,6 +207,7 @@ autogobble
 \newcommand{\blockString}{\item[\block] \centerimage{1.6em}{Images/blocks/string.png} -- text.}
 \newcommand{\blockDisplayPrint}{\item[\block] \centerimage{2em}{Images/blocks/display-print.png} -- vypsání textu na daný řádek.}
 \newcommand{\blockDisplayClear}{\item[\block] \centerimage{2em}{Images/blocks/display-clear.png} -- smazání textu na daném řádku.}
+
 
 % ---------------------------------------- SDÍLENÉ PŘÍKAZY ----------------------------------------
 \newcommand{\errata}{%
