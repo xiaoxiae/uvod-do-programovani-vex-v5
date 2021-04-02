@@ -4,6 +4,7 @@
 [ ] Link na nejnovější asset do dokumentu
 [x] Zkonsistentnit tlustý a italics text
 [ ] Zkonsistentnit používání „my“ a „vy“
+[ ] Vyjasnit terminologii (student?)
 
 ## Kapitoly
 [x] 1 - prostředí
@@ -14,3 +15,4 @@
 [ ] 6 - pajtn
 [ ] 7 - ?
 
+[x] Metodologie
