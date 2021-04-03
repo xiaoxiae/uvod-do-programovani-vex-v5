@@ -8,15 +8,16 @@
 [ ] Vyjasnit terminologii (student?)
 [ ] Lepší rozlišení některých obrázků
 [ ] Proofreading od někoho, kdo umí česky :P
+[ ] Dodělat příklady
 
 [ ] Hezčí způsob zadávání bloků
 
 ## Kapitoly
 [x] 1 - prostředí
 [x] 2 - blocky basic
-[x] 3 - senzory
-[~] 4 - autonomní ovládání
-[ ] 5 - blocky advanced
-[ ] 6 - pajtn
+[~] 3 - senzory
+[x] 4 - autonomní ovládání
+[~] 5 - blocky advanced
+[ ] 6 - kam dál?
 
 [x] Metodologie
