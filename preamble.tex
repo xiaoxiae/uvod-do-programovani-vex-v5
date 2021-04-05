@@ -33,11 +33,14 @@
 % ---------------------------------------- KÓD ----------------------------------------
 \usepackage[outputdir=Build]{minted}
 \setminted{
-frame=lines,
 framesep=2mm,
 linenos,
-autogobble
+autogobble,
+fontsize=\footnotesize
 }
+
+\RecustomVerbatimEnvironment{Verbatim}{BVerbatim}{}
+\renewcommand{\figurename}{Listing}
 
 
 % ---------------------------------------- VLNA ----------------------------------------
@@ -55,21 +58,7 @@ autogobble
 \sisetup{per-mode = symbol}
 
 
-% ---------------------------------------- COLOR BOXY ----------------------------------------
-\usepackage[most]{tcolorbox}
-\newtcolorbox{sectionsummary}[1][]{%
-  attach boxed title to top center
-               = {yshift=-3pt},
-  colback      = white,
-  colframe     = black,
-  colbacktitle = white,
-  coltitle     = black,
-  title        = Naučíme se,
-  boxrule      = 0.5pt,
-  boxed title style={boxrule=0.5pt},
-  enhanced,
-}
-
+% ---------------------------------------- BOXY ----------------------------------------
 \setlength{\fboxrule}{0.5pt}
 \setlength{\fboxsep}{0pt}
 
