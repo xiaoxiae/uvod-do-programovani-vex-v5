@@ -4,8 +4,8 @@
 [x] Zkonsistentnit tlustý a italics text
 [~] Zkonsistentnit používání „my“ a „vy“
 [ ] Link na nejnovější asset do dokumentu
-[ ] Vyjasnit terminologii (student?)
-[ ] Lepší rozlišení některých obrázků
+[x] Lepší rozlišení některých obrázků
+[x] Vyjasnit terminologii (student?)
 [ ] Proofreading od někoho, kdo umí česky :P
 [ ] Dodělat příklady
 
@@ -19,4 +19,6 @@
 [~] 5 - blocky advanced
 [~] 6 - kam dál?
 
-[x] Metodologie
+[~] Metodologie
+	[ ] konkrétní detaily k tomu, kde by mohl být u dané hodiny problém.
+	[ ] Ohvězdičkované úkoly?
