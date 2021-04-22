@@ -98,7 +98,7 @@ fontsize=\footnotesize
 	question/pre-hook = \addmargin[5.5em]{0em} ,
 	solution/pre-hook = \addmargin[5.5em]{0em} ,
 	question/post-hook = \endaddmargin ,
-	solution/post-hook = \endaddmargin
+	solution/post-hook = \endaddmargin ,
 }
 
 % https://tex.stackexchange.com/questions/263467/exsheets-how-to-get-a-counter-reference-combining-section-and-question-numbers
@@ -159,7 +159,7 @@ fontsize=\footnotesize
 \newcommand{\blockMotorDoneImage}{\centerimage{1.6em}{Images/blocks/motor-done.png} }
 \newcommand{\blockMotorDone}{\item[\block] \blockMotorDoneImage -- podmínka která říká, zda daný motor skončil.}
 
-\newcommand{\blockLoop}{\item[\block] \centerimage{4em}{Images/blocks/loop.png} -- opakuje bloky uvnitř několikrát.}
+\newcommand{\blockLoop}{\item[\block] \centerimage{5em}{Images/blocks/loop.png} -- opakuje bloky uvnitř několikrát.}
 \newcommand{\blockLoopForever}{\item[\block] \centerimage{4em}{Images/blocks/loop-forever.png} -- opakuje bloky uvnitř donekonečna.}
 \newcommand{\blockLoopWhile}{\item[\block] \centerimage{4em}{Images/blocks/loop-while.png} -- \parbox{0.725\textwidth}{opakuje bloky uvnitř, dokud (\textit{while}) nebo než (\textit{until}) platí podmínka.}}
 
@@ -192,6 +192,10 @@ fontsize=\footnotesize
 \newcommand{\blockLogicFalseImage}{\centerimage{1.6em}{Images/blocks/logic-false.png}}
 \newcommand{\blockLogicFalseImageBaseline}{\centerimage{\baselineskip}{Images/blocks/logic-false.png}}
 \newcommand{\blockLogicFalse}{\item[\block] \blockLogicFalseImage\ -- hodnota neprady.}
+\newcommand{\blockLogicIf}{\item[\block] \centerimage{4em}{Images/blocks/logic-if.png} -- vykoná bloky uvnitř, pokud je podmínka pravda.}
+\newcommand{\blockLogicIfElse}{\item[\block] \centerimage{6em}{Images/blocks/logic-if-else.png} -- vykoná bloky v první části, pokud je podmínka pravda, jinak ve druhé.}
+\newcommand{\blockLogicComparison}{\item[\block] \centerimage{2em}{Images/blocks/logic-comparison.png} -- porovná dvě čísla.}
+\newcommand{\blockLogicOperator}{\item[\block] \centerimage{2em}{Images/blocks/logic-operator.png} -- pro \texttt{and} musí být levá i pravá strana pravda, pro \texttt{or} stačí jedna.}
 
 \newcommand{\blockString}{\item[\block] \centerimage{1.6em}{Images/blocks/string.png} -- text.}
 \newcommand{\blockDisplayPrint}{\item[\block] \centerimage{2em}{Images/blocks/display-print.png} -- vypsání textu na daný řádek.}

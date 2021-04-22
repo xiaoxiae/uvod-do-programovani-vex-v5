@@ -14,10 +14,10 @@
 ## Kapitoly
 [x] 1 - prostředí
 [x] 2 - blocky basic
-[~] 3 - senzory
+[x] 3 - senzory
 [x] 4 - autonomní ovládání
 [~] 5 - blocky advanced
-[~] 6 - kam dál?
+[x] 6 - kam dál?
 
 [~] Metodologie
 	[ ] konkrétní detaily k tomu, kde by mohl být u dané hodiny problém.

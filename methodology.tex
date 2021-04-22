@@ -1,5 +1,16 @@
 \input{preamble}
 
+% https://tex.stackexchange.com/questions/37189/number-subsections-and-subsubsections-but-not-sections
+\usepackage{titlesec}% http://ctan.org/pkg/titlesec
+\titleformat{\section}%
+  [hang]% <shape>
+  {\normalfont\bfseries\Large}% <format>
+  {}% <label>
+  {0pt}% <sep>
+  {}% <before code>
+\renewcommand{\thesection}{}% Remove section references...
+\renewcommand{\thesubsection}{\arabic{subsection}}%... from subsections
+
 \begin{document}
 \begin{titlepage}
     \begin{center}
@@ -32,12 +43,14 @@ Tento krátký dokument je doprovodný text pro učebnici \textbf{Úvod do progr
 
 \newpage
 
-\section{Příprava}
+\section{Obecné připomínky}
+
+\subsection{Příprava}
 V rámci přípravy na každou hodinu je důležité si prostudovat materiál dané kapitoly a ujistit se, že bude jeho podání pro účastníky dostatečně pochopitelné a srozumitelné.
 
 Příprava je obzvlášť důležitá u příkladů -- kromě pochopení řešení je nutné si připravit věci na jejich úspěšné řešení (papírové ruličky/špejle u robotího slalomu, papíry/náhradní díly robota při vytváření bludiště, apod.)
 
-\section{Příklady a řešení}
+\subsection{Příklady a řešení}
 Řešení příkladů je hlavní mechanizmus, kterým se účastníci naučí a opravdu pochopí probíranou látku. Při řešení je však nesmírně důležité, aby na řešení přišli \textbf{sami} -- vyzrazením řešení se účastník prakticky nic nenaučí. Při zaseknutí je výrazně efektivnější účastníka popostrčit správným směrem, než mu vyzradit řešení:
 \begin{itemize}
 	\item chápeš, na co přesně se tě příklad ptá?
@@ -54,14 +67,14 @@ Pro účastníky, kteří jsou znatelně rychlejší než ostatní, je dobré vy
 	\item robot se měl otočit přesně o 90\degree -- ať se otočí o 45\degree
 \end{itemize}
 
-\section{Způsob výkladu}
+\subsection{Způsob výkladu}
 V průběhu hodiny budou účastníci mít k dispozici notebooky/počítače, na kterých budou robota programovat. U samotného výkladu (který bude ukazován na projektoru/monitoru) je ale nejlepší, když je nepoužívají a plně se soustředí na vás -- látku si zapamatují lépe, poslouchat a zkoušet to co vyučující říká zároveň nejde.
 
 Tam, kde je to možné, je nejlepší látku ukazovat přímo na příkladech na samotném robotovi. Vědět to, co by program teoreticky měl dělat vždy je výrazně slabší než program vidět v akci.
 
 Atmosféru hodiny ovlivňuje především hlas a výraz učitele -- energický výklad z úsměvem pomáhá přenést zapálení i na ostatní, stejně jako monotónní výklad se znuděným výrazem má tendenci uspávat.
 
-\section{Průběh běžné hodiny}
+\subsection{Průběh běžné hodiny}
 V rámci struktury hodiny je dobré se držet stejného formátu.
 
 Rozhodně není nutné dodržovat formát rozepsaný níže -- je skvělé experimentovat (v rozumné míře, ať z hodiny účastníci něco mají) s různými formáty a najít ten, který vám osobně sedí nejvíc. Mě se osobně osvědčilo následující:
@@ -89,5 +102,35 @@ Rozhodně není nutné dodržovat formát rozepsaný níže -- je skvělé exper
 \end{table}
 
 Není nutné dodržovat stejný formát na všech hodinách, protože dost záleží na jejich obsahu (pokud celou hodinu probíhala soutěž o programování pohybu robota v bludišti, tak její opakování je poněkud zbytečné).
+
+\newpage
+
+\section{Připomínky k jednotlivým kapitolám}
+
+\setcounter{secnumdepth}{3}
+
+\subsection{Úvod do prostředí Robot Mesh studio}
+Úvodní kapitola k nastavení prostředí. Je třeba dávat pozor na to, aby se žádný z účastníků během vytváření nového projektu neztratil, jelikož bez vytvořeného projektu robota programovat nejde.
+
+Na počítači každého účastníka je rovněž nezbytné otestovat první Blocky program a odladit případné chyby, protože (opět) bez fungujícího prostředí robota programovat nejde.
+
+U virtuálního robota doporučuji zmínit, že se jedná o vhodný způsob, jak programování cvičit doma (s předpokladem, že má účastník doma funkční počítač a internet).
+
+\subsection{Základy programování v jazyce Blocky}
+Dostatečné ilustrativně vysvětlit, jaký je rozdíl mezi blokujícím a neblokujícím blokem, jelikož to bývá častý zdroj chyb (program skončí kvůli tomu, že rychle vykonal neblokující bloky a doběhl na konec).
+
+Dát účastníkům dostatek času na to, aby si pohráli s příklady kapitoly, převážně s těmi o jízdě na vzdálenost. Podrobně vysvětlit, k čemu slouží bloky v příkladu na jízdu na vzdálenost, jelikož ten je koncepčně nejtěžší na pochopení.
+
+\subsection{Práce se senzory}
+Opět je potřeba se ujistit, že všichni účastníci mají senzory ve svých prostředích nastaveny správně, často je při problémech v programu pouze nenastavený senzor.
+
+\subsection{Teorie autonomního ovládání}
+Dobrý nápad po probrání kapitoly a vyřešení příkladů shrnout rozdíly obou metod -- přesnost, požadavek na senzory, obtížnost implementace, apod.
+
+U příkladu $\bigstar$ je dobré ukázat řešení, ideálně s nakresleným diagramem, na kterým by mělo jít dobře pochopit.
+
+\subsection{Pokročilejší programování v jazyce Blocky}
+
+\subsection{Kam dál?}
 
 \end{document}

@@ -46,7 +46,7 @@
 
 	Jména proměnných \texttt{i}, \texttt{j} a \texttt{k} jsou většinou používány pro to, když potřebujeme postupně procházet přes čísla $1, 2, \ldots$ (což právě v tomto příkladu potřebujeme).
 
-	\subsubsection{Čísla}
+	\subsubsection{Čísla}\label{cha:math}
 	Čísla jsou jeden z druhů informací, které do proměnné můžeme ukládat. Hodí se např. když chceme počítat, kolikrát jsme narazili, o kolik stupňů jsme se otočili nebo kolik ještě otáček chceme dělat. K tomu, abychom s nimi mohli pracovat, se nám budou hodit následující bloky (k nalezení v části \textbf{Math}):
   
 	\begin{itemize}
@@ -61,18 +61,18 @@
 		Naprogramujte robota, aby jel otáčku dopředu a dozadu, poté dvě otáčky dopředu a dozadu, apod. (donekonečna).
 	\end{question}
 
-	\begin{question*}
-		Naprogramujte robota, aby jel do trojúhelníku, poté do čtverce, poté do pětistěnu, apod. (donekonečna).
-	\end{question*}
-
 	\begin{question}
 		Naprogramujte robota, aby ujel vzdálenost, kterou mu na začátku programu uložíte do proměnné \texttt{vzdalenost} (v metrech). Všechny výsledky ke spočítání otáček/stupňů proveďte přes matematické bloky.
 	\end{question}
 
-	\begin{question}
-		Vytvořte bláznivého robota, který se na místě bude otáčet střídavě doprava/doleva o náhodný úhel.
-	\end{question}
-	
+	\begin{question*}
+		Naprogramujte robota, aby jel do trojúhelníku, poté do čtverce, poté do pětistěnu, apod. (v jednom programu, donekonečna).
+	\end{question*}
+
+	\begin{question*}
+		Naprogramujte samovyrovnávajícího robota, který bude stát na místě a dívat se rovně. Pokud do něj někdo strčí, tak se sám narovná do původního směru.
+	\end{question*}
+
 	\subsubsection{Pravdivostní hodnoty}
 	Dalším druhem hodnot, které do proměnných můžeme ukládat, jsou pravdivostní hodnoty (anglicky \textit{boolean values}), které jsou buď pravda (\blockLogicTrueImageBaseline) nebo nepravda (\blockLogicTrueImageBaseline), obě k nalezení v části \textbf{Logic}. Hodí se k ukládání informace o tom, zda je/není něco pravda. Budou důležité v kapitole \ref{cha:logic}
 
@@ -90,7 +90,27 @@
 	\end{question}
 
 	\subsection{Podmínky}\label{cha:logic}
+	Poslední, co nám zbývá, je vykonávat kód v závislosti na nějakých podmínkách (např. podle hodnoty nějaké proměnné). K tomu nám pomohou následující čtyři bloky (k nalezení v části \textbf{Logic}):
+	\begin{itemize}
+		\blockLogicIf
+		\blockLogicIfElse
+		\blockLogicComparison
+		\blockLogicOperator
+	\end{itemize}
 
-	\subsection{Dálkové ovládání}
+	\begin{question*}
+		Naprogramujte \href{https://en.wikipedia.org/wiki/Fizz\_buzz}{Fizz buzz} robota, který bude postupně na obrazovku vypisovat čísla (viz. předchozí část) od $1$ dále. Pokud je číslo dělitelné $3$, otočí se u toho doleva. Pokud $5$, tak doprava. Pokud jak $3$ tak $5$, tak provede oboje. K testování dělitelnosti použijte blok pro běžné matematické testy z části \ref{cha:math}.
+	\end{question*}
+
+	\begin{solution}
+		\begin{figure}
+			\centering
+			\begin{minipage}{0.5\textwidth}
+				\includegraphics[width=\linewidth]{Images/05/solfb.png}
+			\end{minipage}
+		\end{figure}
+	\end{solution}
+
+
 
 \end{document}
