@@ -24,7 +24,7 @@
 	\end{question}
 
 	\begin{question}
-		Napište program v jazyce Blocky, po jehož spuštění robot ujede \si{3m}. Použijte k tomu jeho průměrnou rychlost vypočítanou v minulém příkladu.
+		Napište program v jazyce Blocky, po jehož spuštění robot ujede \si{3m}. Použijte průměrnou rychlost vypočítanou v minulém příkladu.
 	\end{question}
 
 	\subsection{Bang-bang}
@@ -47,7 +47,7 @@
 	\begin{solution}
 		Poloměr kolečka můžeme změřit například pravítkem. Čím přesnější budeme, tím přesněji bude robot jezdit a tím snazší ho bude programovat.
 
-		Počet otáček spočítáme tím, že přenásobíme obvod ($2 \cdot \pi \cdot \text{poloměr}$) číslem $10$.
+		Počet otáček spočítáme tím, že přenásobíme obvod ($2 \cdot \pi \cdot \text{poloměr}$) počtem otácek ($10$).
 	\end{solution}
 
 	\begin{question}
@@ -59,21 +59,29 @@
 	\end{question*}
 
 	\begin{solution*}
-		K tomu, abychom mohli přesně spočítat, o kolik se má robot otočit, budeme potřebovat vědět, jaká je vzájemná vzdálenost kol s motorem. Ty totiž při otáčení obkreslují kružnici a nás zajímá, jaká je $1/4$ jejího obvodu -- to totiž přesně odpovídá otočení robota o 90\degree.
+		U otáčení budeme počítat s tím, že se otáčíme jedním kolečkem, né oběma (pokud bychom se otáčeli oběma, tak vše v následujících výpočtech stačí vydělit dvěma).
 
-		Jakmile si toto uvědomíme, tak stačí spočítat čtvrtinu obvodu přes vzoreček, který již známe:
+		K tomu, abychom mohli přesně spočítat, o kolik otáček se má robot otočit, budeme potřebovat vědět, jaká je vzájemná vzdálenost kol. Jedno totiž při otáčení obkresluje kružnici okolo toho druhého a nás zajímá, jaká je $1/4$ jejího obvodu (to přesně odpovídá 90\degree).
+
+		Jakmile si toto uvědomíme, tak stačí spočítat čtvrtinu obvodu přes již známý vzoreček:
 		$$
 		\begin{aligned}
-			\text{vzdálenost} &= \frac{1}{4} \cdot 2 \cdot \pi \cdot \text{vzdálenost kol} \\
-			&= \frac{1}{2} \cdot \pi \cdot \text{vzdálenost kol}
+			\text{vzdálenost} &= \frac{1}{4} \cdot 2 \cdot \pi \cdot \text{vzdálenost kol}
 		\end{aligned}
 		$$
 		Jelikož chceme tuto vzdálenost ujet, tak ji stačí vložit do vzorečku pro počet otáček kol:
 		$$
 		\begin{aligned}
 			\text{otáčky} &= \frac{\text{vzdálenost}}{\text{obvod}} \\
-			&=  \frac{\frac{1}{2} \cdot \pi \cdot \text{vzdálenost kol}}{2 \cdot \pi \cdot \text{poloměr}}  \\
-			&= \frac{\text{vzdálenost kol}}{4 \cdot \text{poloměr}}
+			&= \frac{\frac{1}{4} \cdot 2 \cdot \pi \cdot \text{vzdálenost kol}}{2 \cdot \pi \cdot \text{poloměr}}  \\
+			&= \frac{\frac{1}{4} \cdot \text{vzdálenost kol}}{\text{poloměr}}
+		\end{aligned}
+		$$
+
+		Obecně pro daný počet stupňů $x$ tedy vychází vzoreček
+		$$
+		\begin{aligned}
+			\text{otáčky} &= \frac{\frac{x}{360} \cdot \text{vzdálenost kol}}{\text{poloměr}}
 		\end{aligned}
 		$$
 	\end{solution*}

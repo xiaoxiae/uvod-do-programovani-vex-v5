@@ -170,8 +170,10 @@ fontsize=\footnotesize
 \newcommand{\blockStart}{\item[\block] \blockStartImage -- startovní blok pro každý Blocky program.}
 \newcommand{\blockComment}{\item[\block] \centerimage{1.6em}{Images/blocks/comment.png} -- blok, který nic nedělá (pouze komentuje kód).}
 
-\newcommand{\blockFunctionDefinition}{\item[\block] \centerimage{4em}{Images/blocks/function-definition.png} -- definování funkce; jméno lze upravit kliknutím.}
-\newcommand{\blockFunctionCall}{\item[\block] \centerimage{2em}{Images/blocks/function-call.png} -- volání funkce TODO lepší vysvětlení?.}
+\newcommand{\functionWheel}{\centerimage{1.6em}{Images/blocks/functionwheel.png} }
+
+\newcommand{\blockFunctionDefinition}{\item[\block] \centerimage{4em}{Images/blocks/function-definition.png} -- \parbox{0.640\textwidth}{definování funkce; jméno lze upravit kliknutím. Rozkliknutím \functionWheel je možné přidat parametry funkce, které lze následně použít stejně jako proměnné.}}
+\newcommand{\blockFunctionCall}{\item[\block] \centerimage{2em}{Images/blocks/function-call.png} -- vykonání funkce.}
 
 \newcommand{\blockBumperPressed}{\item[\block] \centerimage{1.6em}{Images/blocks/bumper-pressed.png} -- podmínka, která říká, zda je daný senzor stisknutý.}
 
