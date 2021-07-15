@@ -1,6 +1,10 @@
 # Úvod do programování VEX V5
 Zdrojový kód (a nejaktuálnější verze) učebnice „Úvod do programování VEX V5“ a doplňujícího textu „Metodika k programování VEX V5“
 
+<p align="center" width="100%">
+    <img width="90%" src="Images/title-page.png"> 
+</p>
+
 ## Kompilování
 K vysázení dokumentů použijte
 ```
