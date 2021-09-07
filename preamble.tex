@@ -19,6 +19,37 @@
 \usepackage{subfiles}
 \usepackage[bottom]{footmisc}  % forcing footnotes to be at the very bottom
 
+\usepackage{tikz}
+
+% Defining a new coordinate system for the page:
+%
+% --------------------------
+% |(-1,1)    (0,1)    (1,1)|
+% |                        |
+% |(-1,0)    (0,0)    (1,0)|
+% |                        |
+% |(-1,-1)   (0,-1)  (1,-1)|
+% --------------------------
+\makeatletter
+\def\parsecomma#1,#2\endparsecomma{\def\page@x{#1}\def\page@y{#2}}
+\tikzdeclarecoordinatesystem{page}{
+    \parsecomma#1\endparsecomma
+    \pgfpointanchor{current page}{north east}
+    % Save the upper right corner
+    \pgf@xc=\pgf@x%
+    \pgf@yc=\pgf@y%
+    % save the lower left corner
+    \pgfpointanchor{current page}{south west}
+    \pgf@xb=\pgf@x%
+    \pgf@yb=\pgf@y%
+    % Transform to the correct placement
+    \pgfmathparse{(\pgf@xc-\pgf@xb)/2.*\page@x+(\pgf@xc+\pgf@xb)/2.}
+    \expandafter\pgf@x\expandafter=\pgfmathresult pt
+    \pgfmathparse{(\pgf@yc-\pgf@yb)/2.*\page@y+(\pgf@yc+\pgf@yb)/2.}
+    \expandafter\pgf@y\expandafter=\pgfmathresult pt
+}
+\makeatother
+
 \usepackage{geometry}
 \geometry{
     a4paper,
@@ -206,5 +237,5 @@ fontsize=\footnotesize
 % ---------------------------------------- SDÍLENÉ PŘÍKAZY ----------------------------------------
 \newcommand{\errata}{%
 	\subsection{Chyby, překlepy, doplňky}
-	Pokud někde odhalíte chybu/překlep, nebo máte pocit, že by něco šlo napsat lépe, tak mě buďto kontaktuje na adrese \href{mailto:tomas@slama.dev}{tomas@slama.dev}, nebo vytvořte issue/pull request na stránce \url{https://github.com/xiaoxiae/uvod-do-programovani-vex-v5}.
+	Pokud někde odhalíte chybu/překlep nebo máte pocit, že by něco šlo napsat lépe, tak mě buďto kontaktuje na adrese \href{mailto:tomas@slama.dev}{tomas@slama.dev}, nebo vytvořte issue/pull request na stránce \url{https://github.com/xiaoxiae/uvod-do-programovani-vex-v5}.
 }
